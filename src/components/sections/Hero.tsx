@@ -87,18 +87,18 @@ export function Hero() {
         {/* Headline — line-by-line reveal */}
         <h1 className="mt-8 text-balance font-display text-[44px] font-bold leading-[0.92] tracking-[-0.035em] md:text-7xl lg:text-[88px]">
           <span className="reveal-mask">
-            <span className="reveal-line">Sua oferta merece</span>
+            <span className="reveal-line">Sua empresa merece</span>
           </span>
           <br />
           <span className="reveal-mask">
             <span className="reveal-line delay-100">uma estrutura</span>
           </span>{" "}
           <span className="reveal-mask">
-            <span className="reveal-line delay-200">que</span>
+            <span className="reveal-line delay-200">que vende</span>
           </span>{" "}
           <span className="reveal-mask">
             <span className="reveal-line delay-300 relative">
-              <span className="gradient-text-animated">vende sozinha.</span>
+              <span className="gradient-text-animated">no automático.</span>
               <span className="font-serif absolute -right-3 -top-3 text-3xl italic text-whatsapp-glow md:-right-5 md:-top-6 md:text-5xl">*</span>
             </span>
           </span>
