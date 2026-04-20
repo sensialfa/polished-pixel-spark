@@ -14,10 +14,8 @@ export function FinalCta() {
           Cresça seu número de Leads
         </div>
 
-        <h2 className="text-balance font-display text-3xl font-bold leading-[1.02] md:text-5xl lg:text-7xl">
-          Seu próximo lançamento
-          <br />
-          merece uma estrutura{" "}
+        <h2 className="text-balance font-display text-2xl font-bold leading-tight md:text-4xl lg:text-5xl">
+          Seu próximo lançamento merece uma estrutura{" "}
           <span className="font-serif-display gradient-text-brand">à altura.</span>
         </h2>
         <p className="mx-auto mt-7 max-w-xl text-pretty text-base text-dark-foreground/70 md:text-xl">
