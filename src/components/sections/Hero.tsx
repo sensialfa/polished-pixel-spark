@@ -85,22 +85,22 @@ export function Hero() {
         </div>
 
         {/* Headline — line-by-line reveal */}
-        <h1 className="mx-auto mt-8 text-center font-display text-[36px] font-extrabold leading-[1.08] tracking-[-0.04em] sm:text-[50px] md:text-[76px] lg:text-[96px]">
-          <span className="block whitespace-nowrap">
+        <h1 className="mx-auto mt-8 w-full max-w-5xl text-center font-display text-[28px] font-extrabold leading-[1.15] tracking-[-0.03em] sm:text-[40px] md:text-[64px] lg:text-[82px]">
+          <span className="block">
             <span className="reveal-mask">
               <span className="reveal-line">Sua empresa merece uma</span>
             </span>
           </span>
-          <span className="mt-1 block whitespace-nowrap sm:mt-2">
+          <span className="mt-1 block sm:mt-2">
             <span className="reveal-mask">
               <span className="reveal-line delay-100">estrutura que vende</span>
             </span>
           </span>
-          <span className="mt-1 block sm:mt-3">
+          <span className="mt-2 block sm:mt-4">
             <span className="reveal-mask">
               <span className="reveal-line delay-200 relative inline-block">
-                <span className="gradient-text-animated text-[40px] font-black sm:text-[56px] md:text-[86px] lg:text-[108px]">no automático.</span>
-                <span className="font-serif absolute -right-3 -top-3 text-3xl italic text-whatsapp-glow md:-right-5 md:-top-6 md:text-5xl">*</span>
+                <span className="gradient-text-animated text-[34px] font-black drop-shadow-[0_0_40px_hsl(var(--electric)/0.5)] sm:text-[48px] md:text-[76px] lg:text-[98px]">no automático.</span>
+                <span className="font-serif absolute -right-2 -top-2 text-2xl italic text-whatsapp-glow md:-right-5 md:-top-5 md:text-5xl">*</span>
               </span>
             </span>
           </span>
