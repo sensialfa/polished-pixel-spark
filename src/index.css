@@ -408,4 +408,13 @@
     pointer-events: none;
     mix-blend-mode: overlay;
   }
+
+  /* Infinite scroll left for cases carousel */
+  .animate-scroll-left {
+    animation: scroll-left 40s linear infinite;
+  }
+  @keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }
