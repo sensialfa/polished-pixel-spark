@@ -1,4 +1,4 @@
-import { Instagram, ArrowUpRight, MapPin, Sparkles } from "lucide-react";
+import { Instagram, ArrowUpRight, MapPin, Sparkles, Mail, Clock, Shield, Zap } from "lucide-react";
 import { buildWhatsAppLink } from "@/components/WhatsAppButton";
 
 const WhatsAppGlyph = ({ className }: { className?: string }) => (
@@ -21,6 +21,12 @@ const services = [
   "Otimização contínua de CPA",
 ];
 
+const trustBadges = [
+  { icon: Clock, label: "Resposta", value: "< 4h" },
+  { icon: Shield, label: "Garantia", value: "7 dias" },
+  { icon: Zap, label: "Entrega", value: "Sprint" },
+];
+
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/5 bg-dark-section text-dark-foreground">
@@ -28,17 +34,23 @@ export function Footer() {
       <div className="pointer-events-none absolute inset-0 opacity-60">
         <div className="aurora-orb animate-aurora-1 left-[-10%] top-[-20%] h-[420px] w-[420px] bg-electric/30" />
         <div className="aurora-orb animate-aurora-2 right-[-10%] bottom-[-30%] h-[480px] w-[480px] bg-whatsapp/25" />
+        <div className="aurora-orb animate-aurora-3 left-[40%] top-[40%] h-[360px] w-[360px] bg-electric-glow/15" />
       </div>
       <div className="absolute inset-0 bg-grid-dark opacity-[0.18]" />
       <div className="noise-overlay absolute inset-0" />
 
+      {/* Top hairline gradient */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-electric-glow/60 to-transparent" />
+
       <div className="relative mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         {/* CTA strip */}
-        <div className="glass relative overflow-hidden rounded-3xl p-6 md:p-10">
-          <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-gradient-to-br from-electric/40 to-whatsapp/30 blur-3xl" />
-          <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        <div className="glass relative overflow-hidden rounded-3xl p-6 md:p-12">
+          <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gradient-to-br from-electric/40 to-whatsapp/30 blur-3xl" />
+          <div className="absolute -left-20 -bottom-20 h-56 w-56 rounded-full bg-gradient-to-tr from-whatsapp/30 to-transparent blur-3xl" />
+
+          <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div className="max-w-xl">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dark-muted">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dark-muted">
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp opacity-75" />
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-whatsapp" />
@@ -49,15 +61,32 @@ export function Footer() {
                 Sua próxima <span className="gradient-text-animated">página que vende</span><br />
                 começa numa conversa.
               </h3>
-              <p className="mt-3 max-w-md text-sm text-dark-muted md:text-base">
+              <p className="mt-4 max-w-md text-sm text-dark-muted md:text-base">
                 Resposta em poucas horas. Diagnóstico honesto, sem proposta inflada.
               </p>
+
+              {/* Trust badges */}
+              <div className="mt-6 flex flex-wrap gap-2">
+                {trustBadges.map((b) => (
+                  <div
+                    key={b.label}
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5"
+                  >
+                    <b.icon className="h-3.5 w-3.5 text-electric-glow" />
+                    <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
+                      {b.label}
+                    </span>
+                    <span className="text-xs font-semibold text-dark-foreground">{b.value}</span>
+                  </div>
+                ))}
+              </div>
             </div>
+
             <a
               href={buildWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="shine group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-whatsapp to-whatsapp-glow px-6 py-4 font-display-tight text-base text-whatsapp-foreground shadow-glow-whatsapp transition-all duration-300 hover:-translate-y-0.5 md:text-lg"
+              className="shine group relative inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-whatsapp to-whatsapp-glow px-7 py-5 font-display-tight text-base text-whatsapp-foreground shadow-glow-whatsapp transition-all duration-300 hover:-translate-y-0.5 md:w-auto md:text-lg"
             >
               <WhatsAppGlyph className="h-5 w-5" />
               Chamar no WhatsApp
@@ -67,7 +96,7 @@ export function Footer() {
         </div>
 
         {/* Main grid */}
-        <div className="mt-16 grid gap-12 md:grid-cols-12">
+        <div className="mt-16 grid gap-12 md:mt-20 md:grid-cols-12">
           {/* Brand */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
@@ -88,9 +117,15 @@ export function Footer() {
               Construo páginas e tráfego para quem vende infoproduto e cansou de investir em coisa
               bonita que não converte. Foco em métrica, não em prêmio.
             </p>
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-dark-muted">
-              <MapPin className="h-3.5 w-3.5 text-electric-glow" />
-              Brasil · atendendo remoto
+            <div className="mt-6 flex flex-wrap gap-2">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-dark-muted">
+                <MapPin className="h-3.5 w-3.5 text-electric-glow" />
+                Brasil · remoto
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-dark-muted">
+                <Mail className="h-3.5 w-3.5 text-whatsapp-glow" />
+                contato@evandro.dev
+              </div>
             </div>
           </div>
 
@@ -127,49 +162,80 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex items-center gap-3">
-              <a
-                href="https://instagram.com/goupcreations"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-electric/60 hover:bg-electric/10 hover:text-electric-glow"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-[18px] w-[18px]" />
-              </a>
-              <a
-                href={buildWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-whatsapp/60 hover:bg-whatsapp/10 hover:text-whatsapp-glow"
-                aria-label="WhatsApp"
-              >
-                <WhatsAppGlyph className="h-[18px] w-[18px]" />
-              </a>
+            <div className="mt-7">
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+                Onde me achar
+              </div>
+              <div className="mt-3 flex items-center gap-3">
+                <a
+                  href="https://instagram.com/goupcreations"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-electric/60 hover:bg-electric/10 hover:text-electric-glow"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-[18px] w-[18px]" />
+                </a>
+                <a
+                  href={buildWhatsAppLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-whatsapp/60 hover:bg-whatsapp/10 hover:text-whatsapp-glow"
+                  aria-label="WhatsApp"
+                >
+                  <WhatsAppGlyph className="h-[18px] w-[18px]" />
+                </a>
+                <a
+                  href="mailto:contato@evandro.dev"
+                  className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-electric/60 hover:bg-electric/10 hover:text-electric-glow"
+                  aria-label="Email"
+                >
+                  <Mail className="h-[18px] w-[18px]" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
+        {/* Divider with chip */}
+        <div className="relative mt-20 flex items-center">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+          <div className="mx-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+            <span className="h-1 w-1 rounded-full bg-whatsapp" />
+            est. 2020
+          </div>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+        </div>
+
         {/* Giant wordmark */}
-        <div className="relative mt-20 overflow-hidden">
+        <div className="relative mt-12 overflow-hidden">
           <div
             className="font-display-tight text-[22vw] leading-[0.85] text-transparent md:text-[14rem]"
             style={{
-              WebkitTextStroke: "1px hsl(var(--dark-foreground) / 0.12)",
+              WebkitTextStroke: "1px hsl(var(--dark-foreground) / 0.14)",
             }}
             aria-hidden="true"
           >
             EVANDRO.DEV
           </div>
+          {/* Animated underline */}
+          <div className="relative mt-4 h-px overflow-hidden">
+            <div className="absolute inset-y-0 left-0 w-1/3 animate-marquee bg-gradient-to-r from-transparent via-electric-glow to-transparent" />
+          </div>
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(240_40%_5%)] to-transparent" />
         </div>
 
         {/* Bottom bar */}
-        <div className="relative mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-dark-muted md:flex-row md:text-left">
+        <div className="relative mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-dark-muted md:flex-row md:text-left">
           <span>© {new Date().getFullYear()} Evandro Carvalho · CNPJ sob solicitação</span>
+          <div className="flex items-center gap-4">
+            <a href="#" className="transition-colors hover:text-dark-foreground">Privacidade</a>
+            <span className="h-3 w-px bg-white/10" />
+            <a href="#" className="transition-colors hover:text-dark-foreground">Termos</a>
+          </div>
           <span className="flex items-center gap-2">
-            <span className="inline-block h-1 w-1 rounded-full bg-whatsapp" />
-            construído em 7 dias · igual aos seus
+            <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-whatsapp" />
+            sistema operacional · 100% uptime
           </span>
         </div>
       </div>
