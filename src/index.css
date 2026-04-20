@@ -357,4 +357,55 @@
   .delay-400 { animation-delay: 0.4s; }
   .delay-500 { animation-delay: 0.5s; }
   .delay-700 { animation-delay: 0.7s; }
+  .delay-900 { animation-delay: 0.9s; }
+
+  /* Avatar orbital ring — slow rotation */
+  .orbital-ring {
+    background: conic-gradient(from 90deg,
+      transparent 0%,
+      hsl(var(--electric-glow)) 15%,
+      transparent 35%,
+      hsl(var(--whatsapp-glow)) 55%,
+      transparent 75%,
+      hsl(var(--gold)) 90%,
+      transparent 100%);
+    animation: spin-orbit 12s linear infinite;
+  }
+
+  @keyframes spin-orbit {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Floating tag — gentle drift */
+  .float-tag-a { animation: float-tag-a 7s ease-in-out infinite; }
+  .float-tag-b { animation: float-tag-b 9s ease-in-out infinite; }
+
+  @keyframes float-tag-a {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-8px) translateX(4px); }
+  }
+  @keyframes float-tag-b {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(6px) translateX(-5px); }
+  }
+
+  /* Marquee — infinite scroll */
+  .marquee-track {
+    animation: marquee-x 30s linear infinite;
+  }
+  @keyframes marquee-x {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Noise texture for premium grain */
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
 }
