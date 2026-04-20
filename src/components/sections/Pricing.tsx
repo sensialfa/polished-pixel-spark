@@ -1,4 +1,4 @@
-import { Check, Layout, Megaphone, ShieldCheck, Clock } from "lucide-react";
+import { Check, Layout, Megaphone, ShieldCheck, Clock, type LucideIcon } from "lucide-react";
 import { Section } from "@/components/Section";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
@@ -90,7 +90,7 @@ export function Pricing() {
 }
 
 interface CardProps {
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  icon: LucideIcon;
   title: string;
   subtitle: string;
   features: string[];
