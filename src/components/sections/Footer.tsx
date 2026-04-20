@@ -1,4 +1,4 @@
-import { Instagram, ArrowUpRight, MapPin, Sparkles, Mail, Clock, Shield, Zap, Phone } from "lucide-react";
+import { Instagram, ArrowUpRight, MapPin, Sparkles, Mail, Phone } from "lucide-react";
 import { buildWhatsAppLink } from "@/components/WhatsAppButton";
 import portrait from "@/assets/evandro-portrait.jpg";
 
@@ -26,7 +26,6 @@ const services = [
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/5 bg-dark-section text-dark-foreground">
-      {/* Aurora background */}
       <div className="pointer-events-none absolute inset-0 opacity-50">
         <div className="aurora-orb animate-aurora-1 left-[-10%] top-[-20%] h-[420px] w-[420px] bg-electric/25" />
         <div className="aurora-orb animate-aurora-2 right-[-10%] bottom-[-30%] h-[480px] w-[480px] bg-whatsapp/20" />
@@ -35,35 +34,98 @@ export function Footer() {
       <div className="noise-overlay absolute inset-0" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-electric-glow/60 to-transparent" />
 
-      <div className="relative mx-auto max-w-5xl px-5 py-14 md:px-8 md:py-20">
-        {/* Info grid — 3 columns centered */}
-        <div className="grid gap-10 text-center md:grid-cols-3 md:text-left">
-          {/* Brand */}
-          <div className="flex flex-col items-center md:items-start">
-            <div className="flex items-center gap-3">
-              <div className="relative">
-                <div className="orbital-ring absolute -inset-1 rounded-full opacity-60" />
-                <img
-                  src={portrait}
-                  alt="Evandro Carvalho"
-                  className="relative h-11 w-11 rounded-full border border-white/15 object-cover object-center"
-                />
-              </div>
-              <div className="text-left">
-                <div className="font-display text-base font-bold tracking-tight text-white">
-                  Evandro Carvalho
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
-                  dev · ads · conversão
-                </div>
-              </div>
+      <div className="relative mx-auto max-w-5xl px-6 py-14 md:px-8 md:py-20">
+        {/* Brand header — centered on mobile */}
+        <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-5">
+          <div className="relative shrink-0">
+            <div className="orbital-ring absolute -inset-1.5 rounded-full opacity-60" />
+            <img
+              src={portrait}
+              alt="Evandro Carvalho"
+              className="relative h-14 w-14 rounded-full border border-white/15 object-cover object-center"
+            />
+          </div>
+          <div className="text-center md:text-left">
+            <div className="font-display text-lg font-bold tracking-tight text-white">
+              Evandro Carvalho
             </div>
-            <p className="mt-4 max-w-xs text-pretty text-sm leading-relaxed text-dark-muted">
+            <p className="mt-0.5 text-sm leading-relaxed text-dark-muted">
               Páginas e tráfego para quem vende infoproduto e quer converter de verdade.
             </p>
+          </div>
+        </div>
 
-            {/* Social icons */}
-            <div className="mt-5 flex items-center gap-2.5">
+        {/* Divider */}
+        <div className="my-10 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
+
+        {/* Grid — 4 columns on desktop, stacked on mobile */}
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+          {/* Navigation */}
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+              Navegação
+            </div>
+            <ul className="mt-4 space-y-2.5">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 text-sm text-dark-foreground/80 transition-colors hover:text-electric-glow"
+                  >
+                    <span className="h-px w-3 bg-white/15 transition-all group-hover:w-6 group-hover:bg-electric-glow" />
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Serviços */}
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+              O que entrego
+            </div>
+            <ul className="mt-4 space-y-2.5">
+              {services.map((s) => (
+                <li key={s} className="flex items-start gap-2 text-sm text-dark-foreground/80">
+                  <Sparkles className="mt-0.5 h-3 w-3 shrink-0 text-whatsapp-glow" />
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contato */}
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+              Contato
+            </div>
+            <ul className="mt-4 space-y-3 text-sm text-dark-foreground/80">
+              <li>
+                <a href="mailto:evcarvalhodev@gmail.com" className="inline-flex items-center gap-2 transition-colors hover:text-electric-glow">
+                  <Mail className="h-3.5 w-3.5 shrink-0 text-whatsapp-glow" />
+                  evcarvalhodev@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-whatsapp-glow">
+                  <Phone className="h-3.5 w-3.5 shrink-0 text-whatsapp-glow" />
+                  (12) 99227-5476
+                </a>
+              </li>
+              <li className="inline-flex items-center gap-2">
+                <MapPin className="h-3.5 w-3.5 shrink-0 text-electric-glow" />
+                Brasil · remoto
+              </li>
+            </ul>
+          </div>
+
+          {/* Redes */}
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+              Redes sociais
+            </div>
+            <div className="mt-4 flex items-center gap-2.5">
               <a
                 href="https://www.instagram.com/goupcreations/"
                 target="_blank"
@@ -91,75 +153,20 @@ export function Footer() {
               </a>
             </div>
           </div>
-
-          {/* Navigation */}
-          <div className="flex flex-col items-center md:items-start">
-            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
-              Navegação
-            </div>
-            <ul className="mt-4 space-y-2.5">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="group inline-flex items-center gap-2 text-sm text-dark-foreground/80 transition-colors hover:text-electric-glow"
-                  >
-                    <span className="h-px w-3 bg-white/15 transition-all group-hover:w-6 group-hover:bg-electric-glow" />
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contato + Serviços */}
-          <div className="flex flex-col items-center md:items-start">
-            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
-              Contato
-            </div>
-            <ul className="mt-4 space-y-2.5 text-sm text-dark-foreground/80">
-              <li className="inline-flex items-center gap-2">
-                <Mail className="h-3.5 w-3.5 text-whatsapp-glow" />
-                evcarvalhodev@gmail.com
-              </li>
-              <li className="inline-flex items-center gap-2">
-                <Phone className="h-3.5 w-3.5 text-whatsapp-glow" />
-                (12) 99227-5476
-              </li>
-              <li className="inline-flex items-center gap-2">
-                <MapPin className="h-3.5 w-3.5 text-electric-glow" />
-                Brasil · remoto
-              </li>
-            </ul>
-
-            <div className="mt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
-              O que entrego
-            </div>
-            <ul className="mt-3 space-y-2">
-              {services.map((s) => (
-                <li key={s} className="flex items-center gap-2 text-sm text-dark-foreground/80 md:items-start">
-                  <Sparkles className="h-3 w-3 shrink-0 text-whatsapp-glow" />
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 border-t border-white/[0.06] pt-8">
-          <div className="flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
-            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-dark-muted">
+        <div className="mt-12 border-t border-white/[0.06] pt-6">
+          <div className="flex flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
+            <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
               © 2026 Evandro Carvalho
             </span>
-
-            <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-dark-muted">
+            <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
               <a href="#" className="transition-colors hover:text-dark-foreground">Privacidade</a>
               <span className="h-3 w-px bg-white/10" />
               <a href="#" className="transition-colors hover:text-dark-foreground">Termos</a>
             </div>
-
-            <span className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-dark-muted">
+            <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
               <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-whatsapp" />
               100% online
             </span>
