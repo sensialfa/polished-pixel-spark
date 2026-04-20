@@ -409,12 +409,15 @@
     mix-blend-mode: overlay;
   }
 
-  /* Infinite scroll left for cases carousel */
-  .animate-scroll-left {
-    animation: scroll-left 40s linear infinite;
+  /* Cases carousel — fast infinite scroll */
+  .animate-cases-scroll {
+    animation: cases-scroll 20s linear infinite;
   }
-  @keyframes scroll-left {
+  @keyframes cases-scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
+
+  /* Hide scrollbar for drag carousel */
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
 }
