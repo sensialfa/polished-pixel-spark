@@ -1,5 +1,6 @@
 import { Instagram, ArrowUpRight, MapPin, Sparkles, Mail, Clock, Shield, Zap } from "lucide-react";
 import { buildWhatsAppLink } from "@/components/WhatsAppButton";
+import portrait from "@/assets/evandro-portrait.jpg";
 
 const WhatsAppGlyph = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
