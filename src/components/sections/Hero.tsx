@@ -29,16 +29,16 @@ export function Hero() {
 
       <div className="relative mx-auto flex max-w-5xl flex-col items-center text-center">
         {/* Centered avatar — large, with orbital ring + name */}
-        <div className="animate-fade-up relative mb-7 md:mb-9">
+        <div className="animate-fade-up relative mb-8 flex items-center justify-center md:mb-10">
           {/* Orbital rotating ring */}
-          <div className="absolute inset-0 -m-3 rounded-full">
+          <div className="absolute inset-0 -m-4 rounded-full">
             <div className="orbital-ring absolute inset-0 rounded-full opacity-70 blur-[2px]" />
           </div>
           {/* Soft halo */}
-          <div className="absolute inset-0 -m-8 rounded-full bg-gradient-to-br from-electric/30 via-whatsapp/20 to-gold/20 blur-3xl" />
+          <div className="absolute inset-0 -m-10 rounded-full bg-gradient-to-br from-electric/30 via-whatsapp/20 to-gold/20 blur-3xl" />
 
           {/* Avatar */}
-          <div className="relative h-32 w-32 overflow-hidden rounded-full border-2 border-white/15 bg-dark shadow-[0_20px_70px_-15px_hsl(var(--electric)/0.6)] md:h-44 md:w-44">
+          <div className="relative h-40 w-40 overflow-hidden rounded-full border-2 border-white/15 bg-dark shadow-[0_20px_70px_-15px_hsl(var(--electric)/0.6)] md:h-56 md:w-56">
             <img
               src={portrait}
               alt="Evandro Carvalho"
@@ -50,12 +50,12 @@ export function Hero() {
           </div>
 
           {/* Floating verified-style tag */}
-          <div className="float-tag-a absolute -right-2 -top-1 flex items-center gap-1 rounded-full border border-white/10 bg-dark/80 px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-whatsapp-glow backdrop-blur md:-right-4 md:top-2">
+          <div className="float-tag-a absolute -right-3 top-0 flex items-center gap-1 rounded-full border border-white/10 bg-dark/80 px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-whatsapp-glow backdrop-blur md:-right-6 md:top-3">
             <span className="h-1.5 w-1.5 animate-ping rounded-full bg-whatsapp" />
             online
           </div>
           {/* Floating role tag */}
-          <div className="float-tag-b absolute -bottom-2 -left-3 hidden items-center gap-1.5 rounded-full border border-white/10 bg-dark/80 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-electric-glow backdrop-blur md:flex">
+          <div className="float-tag-b absolute -bottom-2 -left-4 hidden items-center gap-1.5 rounded-full border border-white/10 bg-dark/80 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-electric-glow backdrop-blur md:flex">
             <Sparkles className="h-3 w-3" />
             dev + ads
           </div>
