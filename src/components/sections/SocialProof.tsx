@@ -44,24 +44,18 @@ interface Video {
 const videos: Video[] = [
   {
     id: "1",
-    title: "Importância do Marketing",
-    youtubeId: "3T0Zv3THESo",
-    thumbnail: `https://img.youtube.com/vi/3T0Zv3THESo/hqdefault.jpg`,
-  },
-  {
-    id: "2",
     title: "Avaliação Lucas",
     youtubeId: "BI4gLwGcdmc",
     thumbnail: `https://img.youtube.com/vi/BI4gLwGcdmc/hqdefault.jpg`,
   },
   {
-    id: "3",
+    id: "2",
     title: "Avaliação Marcos",
     youtubeId: "1j8103t0Uu8",
     thumbnail: `https://img.youtube.com/vi/1j8103t0Uu8/hqdefault.jpg`,
   },
   {
-    id: "4",
+    id: "3",
     title: "Avaliação Vinícius",
     youtubeId: "_KRZYdtAPWM",
     thumbnail: `https://img.youtube.com/vi/_KRZYdtAPWM/hqdefault.jpg`,
