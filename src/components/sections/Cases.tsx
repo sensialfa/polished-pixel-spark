@@ -17,27 +17,27 @@ interface Case {
 
 const cases: Case[] = [
   {
-    tag: "Lancamento",
+    tag: "Lançamento",
     tagColor: "bg-electric/20 text-electric ring-1 ring-electric/30",
-    niche: "Mentoria de negocios digitais",
+    niche: "Mentoria de negócios digitais",
     roas: "4.8x",
     cpl: "R$ 6,40",
     conversion: "3.2%",
     revenue: "R$ 187k",
     period: "21 dias de campanha",
-    resultLine: "R$ 38k investidos viraram R$ 187k em receita — sem queimar lista nem audiencia.",
+    resultLine: "R$ 38k investidos viraram R$ 187k em receita — sem queimar lista nem audiência.",
     icon: <Rocket className="h-5 w-5 text-electric" />,
   },
   {
-    tag: "Perpetuo",
+    tag: "Perpétuo",
     tagColor: "bg-whatsapp/20 text-whatsapp ring-1 ring-whatsapp/30",
-    niche: "Curso online de ingles",
+    niche: "Curso online de inglês",
     roas: "3.6x",
     cpl: "R$ 4,90",
     conversion: "2.8%",
-    revenue: "R$ 92k/mes",
-    period: "Rodando ha 4 meses",
-    resultLine: "Estrutura estavel rodando R$ 25k/mes em ads e devolvendo +R$ 90k em vendas recorrentes.",
+    revenue: "R$ 92k/mês",
+    period: "Rodando há 4 meses",
+    resultLine: "Estrutura estável rodando R$ 25k/mês em ads e devolvendo +R$ 90k em vendas recorrentes.",
     icon: <Infinity className="h-5 w-5 text-whatsapp" />,
   },
   {
@@ -49,7 +49,7 @@ const cases: Case[] = [
     conversion: "4.1%",
     revenue: "R$ 134k",
     period: "1 ciclo de 14 dias",
-    resultLine: "VSL + pagina otimizada baixaram o CPL em 47% e dobraram a taxa de conversao do webinar.",
+    resultLine: "VSL + página otimizada baixaram o CPL em 47% e dobraram a taxa de conversão do webinar.",
     icon: <Target className="h-5 w-5 text-gold" />,
   },
   {
@@ -60,8 +60,8 @@ const cases: Case[] = [
     cpl: "R$ 3,80",
     conversion: "3.5%",
     revenue: "R$ 210k",
-    period: "3 meses de operacao",
-    resultLine: "Funil otimizado com upsell elevou o ticket medio em 62% e reduziu custo por venda.",
+    period: "3 meses de operação",
+    resultLine: "Funil otimizado com upsell elevou o ticket médio em 62% e reduziu custo por venda.",
     icon: <Package className="h-5 w-5 text-electric" />,
   },
   {
@@ -73,7 +73,7 @@ const cases: Case[] = [
     conversion: "5.3%",
     revenue: "R$ 320k",
     period: "30 dias de campanha",
-    resultLine: "Pagina de aplicacao + qualificacao automatica geraram 48 calls com taxa de 38% de fechamento.",
+    resultLine: "Página de aplicação + qualificação automática geraram 48 calls com taxa de 38% de fechamento.",
     icon: <Gem className="h-5 w-5 text-gold" />,
   },
 ];
@@ -141,10 +141,7 @@ export function Cases() {
 
   return (
     <Section id="cases" className="relative overflow-hidden bg-dark-section text-dark-foreground">
-      {/* Subtle grid overlay */}
       <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-40" />
-
-      {/* Noise texture */}
       <div className="noise-overlay pointer-events-none absolute inset-0" />
 
       <div className="relative mx-auto max-w-3xl text-center">
@@ -153,19 +150,17 @@ export function Cases() {
           Cases reais
         </span>
         <h2 className="mt-6 text-balance font-display text-3xl font-bold leading-[1.05] text-white md:text-5xl lg:text-6xl">
-          Numeros que{" "}
+          Números que{" "}
           <span className="gradient-text-animated">cabem</span>{" "}
           no extrato.
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-dark-muted md:text-lg">
-          Resultados de projetos reais entregues nos ultimos 12 meses, em diferentes nichos e
+          Resultados de projetos reais entregues nos últimos 12 meses, em diferentes nichos e
           modelos de venda.
         </p>
       </div>
 
-      {/* Draggable infinite carousel */}
       <div className="relative mt-14">
-        {/* Fade edges */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-[hsl(240_35%_9%)] to-transparent md:w-40" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-[hsl(240_35%_9%)] to-transparent md:w-40" />
 
@@ -196,10 +191,8 @@ export function Cases() {
                 key={i}
                 className="group relative flex w-[340px] shrink-0 flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.04] backdrop-blur-sm shadow-[0_8px_32px_-8px_hsl(0_0%_0%/0.5)] transition-all duration-500 hover:-translate-y-1.5 hover:border-white/[0.12] hover:bg-white/[0.07] hover:shadow-[0_16px_48px_-12px_hsl(0_0%_0%/0.6)] md:w-[380px]"
               >
-                {/* Top accent line */}
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-electric to-transparent opacity-50 transition-opacity group-hover:opacity-100" />
 
-                {/* Header */}
                 <div className="flex items-center justify-between p-5 pb-0">
                   <div className="flex items-center gap-2.5">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/[0.06] ring-1 ring-white/[0.08]">
@@ -214,21 +207,18 @@ export function Cases() {
                   </span>
                 </div>
 
-                {/* Content */}
                 <div className="p-5">
                   <h3 className="font-display text-lg font-bold leading-tight text-white md:text-xl">
                     {c.niche}
                   </h3>
 
-                  {/* Metrics grid */}
                   <div className="mt-4 grid grid-cols-2 gap-2">
                     <MetricCard label="ROAS" value={c.roas} accent="electric" />
                     <MetricCard label="CPL" value={c.cpl} accent="whatsapp" />
-                    <MetricCard label="Conversao" value={c.conversion} accent="electric" />
+                    <MetricCard label="Conversão" value={c.conversion} accent="electric" />
                     <MetricCard label="Receita" value={c.revenue} accent="whatsapp" />
                   </div>
 
-                  {/* Result highlight */}
                   <div className="mt-4 flex items-start gap-2.5 rounded-xl border border-white/[0.06] bg-white/[0.03] p-3.5">
                     <TrendingUp className="mt-0.5 h-4 w-4 shrink-0 text-whatsapp" strokeWidth={2.5} />
                     <p className="text-[12px] font-medium leading-relaxed text-white/70 md:text-[13px]">
@@ -237,9 +227,8 @@ export function Cases() {
                   </div>
                 </div>
 
-                {/* Footer */}
                 <div className="mt-auto flex items-center justify-between border-t border-white/[0.06] px-5 py-3 text-xs text-dark-muted">
-                  <span className="font-medium">Pagina + Ads + Otimizacao</span>
+                  <span className="font-medium">Página + Ads + Otimização</span>
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-electric" />
                 </div>
               </article>
@@ -249,7 +238,7 @@ export function Cases() {
       </div>
 
       <p className="relative mx-auto mt-10 max-w-xl text-center text-xs text-dark-muted">
-        * Numeros reais de projetos entregues. Nomes preservados sob NDA — relato detalhado no
+        * Números reais de projetos entregues. Nomes preservados sob NDA — relato detalhado no
         WhatsApp.
       </p>
     </Section>
