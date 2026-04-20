@@ -171,7 +171,7 @@ export function Footer() {
               </div>
               <div className="mt-3 flex items-center gap-3">
                 <a
-                  href="https://instagram.com/goupcreations"
+                  href="https://www.instagram.com/goupcreations/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-electric/60 hover:bg-electric/10 hover:text-electric-glow"
