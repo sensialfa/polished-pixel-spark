@@ -77,10 +77,6 @@ export function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-whatsapp" />
           </span>
-          <span className="font-mono text-[11px] uppercase tracking-[0.15em]">
-            3 vagas · maio
-          </span>
-          <span className="h-3 w-px bg-white/15" />
           <span className="text-whatsapp-glow">Resposta em 2h</span>
         </div>
 
