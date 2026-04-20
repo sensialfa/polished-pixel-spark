@@ -12,8 +12,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
+        display: ['"Space Grotesk"', "system-ui", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ['"Instrument Serif"', "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,9 +52,14 @@ export default {
         },
         whatsapp: {
           DEFAULT: "hsl(var(--whatsapp))",
+          glow: "hsl(var(--whatsapp-glow))",
           foreground: "hsl(var(--whatsapp-foreground))",
         },
-        electric: "hsl(var(--electric))",
+        electric: {
+          DEFAULT: "hsl(var(--electric))",
+          glow: "hsl(var(--electric-glow))",
+        },
+        gold: "hsl(var(--gold))",
         dark: {
           DEFAULT: "hsl(var(--dark))",
           foreground: "hsl(var(--dark-foreground))",
