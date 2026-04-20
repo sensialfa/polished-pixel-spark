@@ -11,7 +11,7 @@ export function FinalCta() {
       <div className="relative mx-auto max-w-3xl text-center">
         <div className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-dark-foreground/80 backdrop-blur">
           <Sparkles className="h-3 w-3 text-gold" />
-          Só 3 vagas em maio
+          Cresça seu número de Leads
         </div>
 
         <h2 className="text-balance font-display text-3xl font-bold leading-[1.02] md:text-5xl lg:text-7xl">
