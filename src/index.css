@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Instrument+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif&family=JetBrains+Mono:wght@400;500;600&family=Anton&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -101,7 +101,7 @@
 
   h1, h2, h3, h4 {
     font-family: 'Space Grotesk', system-ui, sans-serif;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
     font-weight: 700;
   }
 
@@ -110,6 +110,18 @@
     font-style: italic;
     letter-spacing: -0.01em;
     font-weight: 400;
+  }
+
+  .font-display-tight {
+    font-family: 'Anton', 'Space Grotesk', sans-serif;
+    letter-spacing: -0.04em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-feature-settings: 'ss02', 'cv11';
   }
 }
 
@@ -215,4 +227,134 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
   }
+
+  /* Aurora orbs — soft animated mesh background */
+  .aurora-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(110px);
+    opacity: 0.55;
+    will-change: transform;
+  }
+
+  .animate-aurora-1 { animation: aurora-1 18s ease-in-out infinite; }
+  .animate-aurora-2 { animation: aurora-2 22s ease-in-out infinite; }
+  .animate-aurora-3 { animation: aurora-3 26s ease-in-out infinite; }
+
+  @keyframes aurora-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(60px, -40px) scale(1.15); }
+  }
+  @keyframes aurora-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-50px, 60px) scale(1.1); }
+  }
+  @keyframes aurora-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, 50px) scale(1.2); }
+  }
+
+  /* Conic gradient ring for hero badges */
+  .conic-ring {
+    background: conic-gradient(from 0deg,
+      hsl(var(--electric-glow)) 0%,
+      hsl(var(--whatsapp-glow)) 33%,
+      hsl(var(--gold)) 66%,
+      hsl(var(--electric-glow)) 100%);
+    animation: spin-slow 8s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Animated gradient text — futuristic shimmer */
+  .gradient-text-animated {
+    background: linear-gradient(110deg,
+      hsl(var(--electric-glow)) 0%,
+      hsl(var(--whatsapp-glow)) 35%,
+      hsl(var(--gold)) 60%,
+      hsl(var(--electric-glow)) 100%);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-flow 6s linear infinite;
+  }
+
+  @keyframes gradient-flow {
+    to { background-position: 250% center; }
+  }
+
+  /* Text reveal — letter by letter slide up */
+  .reveal-mask {
+    overflow: hidden;
+    display: inline-block;
+  }
+  .reveal-line {
+    display: inline-block;
+    animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes reveal-up {
+    from { transform: translateY(110%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Glassmorphism cards */
+  .glass {
+    background: hsl(0 0% 100% / 0.04);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid hsl(0 0% 100% / 0.08);
+  }
+
+  /* Shine sweep — for buttons & badges */
+  .shine::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg,
+      transparent 30%,
+      hsl(0 0% 100% / 0.25) 50%,
+      transparent 70%);
+    transform: translateX(-100%);
+    animation: shine-sweep 3.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes shine-sweep {
+    to { transform: translateX(100%); }
+  }
+
+  /* Ticker scroll for stats / logos */
+  .animate-ticker {
+    animation: ticker 35s linear infinite;
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Subtle scan line over hero */
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      hsl(var(--electric-glow) / 0.04) 50%,
+      transparent 100%);
+    background-size: 100% 8px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* Animation delays for staggered reveals */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-700 { animation-delay: 0.7s; }
 }

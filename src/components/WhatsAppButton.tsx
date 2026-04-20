@@ -69,16 +69,16 @@ export function WhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full font-semibold text-whatsapp-foreground shadow-glow-whatsapp transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_25px_70px_-15px_hsl(var(--whatsapp)/0.65)] active:translate-y-0",
+        "shine group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full font-semibold text-whatsapp-foreground shadow-glow-whatsapp transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_25px_70px_-15px_hsl(var(--whatsapp)/0.7)] active:translate-y-0",
         "bg-[linear-gradient(120deg,hsl(var(--whatsapp))_0%,hsl(var(--whatsapp-glow))_50%,hsl(var(--whatsapp))_100%)] bg-[length:200%_100%] hover:bg-[position:100%_0]",
         sizeClasses[size],
         glow && "pulse-glow",
         className,
       )}
     >
-      <WhatsAppGlyph className={iconSize} />
-      <span className="relative">{children}</span>
-      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={2.5} />
+      <WhatsAppGlyph className={cn(iconSize, "relative z-10")} />
+      <span className="relative z-10">{children}</span>
+      <ArrowUpRight className="relative z-10 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={2.5} />
     </a>
   );
 }
