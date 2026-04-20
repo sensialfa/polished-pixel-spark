@@ -85,18 +85,18 @@ export function Hero() {
         </div>
 
         {/* Headline — line-by-line reveal */}
-        <h1 className="mx-auto mt-8 w-full max-w-5xl text-center font-display text-[28px] font-extrabold leading-[1.15] tracking-[-0.03em] sm:text-[40px] md:text-[64px] lg:text-[82px]">
+        <h1 className="mx-auto mt-8 w-full max-w-5xl text-center font-display text-[28px] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-[40px] md:text-[64px] lg:text-[82px]">
           <span className="block">
             <span className="reveal-mask">
               <span className="reveal-line">Sua empresa merece uma</span>
             </span>
           </span>
-          <span className="mt-1 block sm:mt-2">
+          <span className="block sm:mt-1">
             <span className="reveal-mask">
               <span className="reveal-line delay-100">estrutura que vende</span>
             </span>
           </span>
-          <span className="mt-2 block sm:mt-4">
+          <span className="block sm:mt-1">
             <span className="reveal-mask">
               <span className="reveal-line delay-200 relative inline-block">
                 <span className="gradient-text-animated text-[34px] font-black drop-shadow-[0_0_40px_hsl(var(--electric)/0.5)] sm:text-[48px] md:text-[76px] lg:text-[98px]">no automático.</span>
