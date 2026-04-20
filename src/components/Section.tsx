@@ -12,7 +12,7 @@ export function Section({ children, className, dark = false, id }: Props) {
     <section
       id={id}
       className={cn(
-        "px-5 py-20 md:px-8 md:py-28",
+        "px-5 py-16 md:px-8 md:py-24",
         dark ? "bg-dark-section text-dark-foreground" : "bg-background text-foreground",
         className,
       )}

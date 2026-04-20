@@ -3,7 +3,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-dark-section px-5 py-24 text-dark-foreground md:px-8 md:py-32">
+    <section className="relative overflow-hidden bg-dark-section px-5 py-16 text-dark-foreground md:px-8 md:py-24">
       <div className="absolute inset-0 bg-grid-dark opacity-30 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black,transparent)]" />
       <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-electric/15 blur-[120px]" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-whatsapp/15 blur-[100px]" />
