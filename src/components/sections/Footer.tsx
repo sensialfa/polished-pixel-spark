@@ -102,10 +102,12 @@ export function Footer() {
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="orbital-ring absolute -inset-1 rounded-2xl opacity-70" />
-                <span className="relative grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-electric to-whatsapp font-display-tight text-xl text-white">
-                  E
-                </span>
+                <div className="orbital-ring absolute -inset-1 rounded-full opacity-70" />
+                <img
+                  src={portrait}
+                  alt="Evandro Carvalho"
+                  className="relative h-12 w-12 rounded-full border border-white/15 object-cover object-center"
+                />
               </div>
               <div>
                 <div className="font-display-tight text-xl tracking-tight">Evandro Carvalho</div>
