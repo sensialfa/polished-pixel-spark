@@ -85,7 +85,7 @@ export function Hero() {
         </div>
 
         {/* Headline — line-by-line reveal */}
-        <h1 className="mx-auto mt-8 w-full max-w-5xl text-center font-display text-[28px] font-extrabold leading-[1.15] tracking-[-0.03em] sm:text-[40px] md:text-[64px] lg:text-[82px]">
+        <h1 className="mx-auto mt-8 w-full max-w-5xl text-center font-display text-[28px] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-[40px] md:text-[64px] lg:text-[82px]">
           <span className="block">
             <span className="reveal-mask">
               <span className="reveal-line">Sua empresa merece uma</span>
