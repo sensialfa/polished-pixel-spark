@@ -129,12 +129,12 @@ interface CardProps {
 
 function PricingCard({ icon: Icon, title, subtitle, features, gradientFrom, gradientTo, accentColor, checkBg, borderColor, highlight }: CardProps) {
   return (
-    <div className={`group relative flex flex-col overflow-hidden rounded-3xl border bg-[hsl(240_30%_9%)] p-7 transition-all duration-500 hover:-translate-y-1 md:p-9 ${highlight ? "border-whatsapp/25" : borderColor}`}>
-      <div className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r ${gradientFrom} via-transparent ${gradientTo}`} />
-      <div className={`pointer-events-none absolute -top-20 left-1/2 h-40 w-[80%] -translate-x-1/2 rounded-full bg-gradient-to-b ${gradientFrom} ${gradientTo} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100`} />
+    <div className={`group relative flex flex-col rounded-3xl border bg-[hsl(240_30%_9%)] p-7 transition-all duration-500 hover:-translate-y-1 md:p-9 ${highlight ? "border-whatsapp/25" : borderColor}`}>
+      <div className={`absolute inset-x-0 top-0 h-[2px] overflow-hidden rounded-t-3xl bg-gradient-to-r ${gradientFrom} via-transparent ${gradientTo}`} />
+      <div className={`pointer-events-none absolute -top-20 left-1/2 h-40 w-[80%] -translate-x-1/2 overflow-hidden rounded-full bg-gradient-to-b ${gradientFrom} ${gradientTo} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100`} />
 
       {highlight && (
-        <span className="absolute -top-3 right-7 rounded-full bg-whatsapp px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-whatsapp-foreground shadow-glow-whatsapp shine overflow-hidden">
+        <span className="shine absolute -top-3.5 left-1/2 -translate-x-1/2 overflow-hidden rounded-full bg-whatsapp px-4 py-1 text-[10px] font-bold uppercase tracking-wider text-whatsapp-foreground shadow-glow-whatsapp">
           Diferencial
         </span>
       )}
