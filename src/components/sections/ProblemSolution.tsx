@@ -1,57 +1,96 @@
-import { X, Check } from "lucide-react";
+import { TrendingDown, Flame, EyeOff, Target, Zap, Compass } from "lucide-react";
 import { Section } from "@/components/Section";
 
 const problems = [
-  "Pagina de vendas que nao converte e dinheiro jogado no lixo do trafego",
-  "Anuncios rodando sem estrategia = CPL alto e ROAS negativo",
-  "Seus concorrentes estao escalando enquanto voce tenta resolver sozinho",
+  {
+    icon: EyeOff,
+    title: "Pagina amadora",
+    text: "Layout copiado de template, copy generica, zero hierarquia visual. Visitante chega, olha e fecha em 6 segundos.",
+  },
+  {
+    icon: Flame,
+    title: "Ads queimando dinheiro",
+    text: "Campanha sem segmentacao real, criativo fraco e zero teste estruturado. CPL nas alturas, ROAS no vermelho.",
+  },
+  {
+    icon: TrendingDown,
+    title: "Concorrente passando por cima",
+    text: "Enquanto voce tenta resolver no improviso, quem entendeu o jogo ja escalou pra 6 digitos por mes.",
+  },
 ];
 
 const solutions = [
-  "Pagina construida com copy e design que converte visitante em comprador",
-  "Trafego pago com segmentacao cirurgica pro publico do seu produto",
-  "Tudo entregue em 7 dias, pronto pra rodar",
+  {
+    icon: Target,
+    title: "Pagina que converte",
+    text: "Copy persuasiva, design que guia o olhar e gatilhos posicionados onde o visitante ja esta pronto pra clicar.",
+  },
+  {
+    icon: Compass,
+    title: "Trafego com bussola",
+    text: "Segmentacao cirurgica, criativo testado e estrutura de funil que entrega o lead certo pelo menor custo possivel.",
+  },
+  {
+    icon: Zap,
+    title: "7 dias do zero ao live",
+    text: "Voce nao espera meses por uma agencia. Em 1 semana sua estrutura esta no ar, rodando e gerando vendas.",
+  },
 ];
 
 export function ProblemSolution() {
   return (
     <Section>
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-balance text-3xl font-bold md:text-5xl">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">
+          O diagnostico
+        </span>
+        <h2 className="mt-4 text-balance font-display text-3xl font-bold leading-[1.05] md:text-5xl lg:text-6xl">
           Seu produto e bom.
           <br />
-          <span className="text-destructive">Sua estrutura de vendas nao.</span>
+          <span className="font-serif-display text-destructive">Sua estrutura de venda</span> nao.
         </h2>
+        <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-muted-foreground md:text-lg">
+          90% dos infoprodutores que travaram no faturamento tem o mesmo problema — e quase nunca e
+          o produto.
+        </p>
       </div>
 
-      <div className="mx-auto mt-16 grid max-w-4xl gap-6 md:grid-cols-2">
-        <div className="rounded-2xl border border-destructive/20 bg-destructive/5 p-7 md:p-8">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-destructive/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-destructive">
-            O problema
+      <div className="mx-auto mt-14 grid max-w-5xl gap-6 lg:grid-cols-2 lg:gap-8">
+        <div className="relative overflow-hidden rounded-3xl border border-destructive/15 bg-gradient-to-br from-destructive/[0.06] to-transparent p-7 md:p-9">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-destructive/10 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-destructive">
+            <span className="h-1.5 w-1.5 rounded-full bg-destructive" />
+            Onde o dinheiro vaza
           </div>
-          <ul className="space-y-4">
-            {problems.map((p) => (
-              <li key={p} className="flex gap-3">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-destructive/15">
-                  <X className="h-4 w-4 text-destructive" strokeWidth={3} />
+          <ul className="space-y-6">
+            {problems.map(({ icon: Icon, title, text }) => (
+              <li key={title} className="flex gap-4">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-destructive/10 text-destructive">
+                  <Icon className="h-[18px] w-[18px]" strokeWidth={2} />
                 </span>
-                <span className="text-sm text-foreground/80 md:text-base">{p}</span>
+                <div>
+                  <div className="font-display text-base font-bold text-foreground md:text-lg">{title}</div>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground md:text-[15px]">{text}</p>
+                </div>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-whatsapp/20 bg-whatsapp/5 p-7 md:p-8">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-whatsapp/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-whatsapp">
-            A solucao
+        <div className="relative overflow-hidden rounded-3xl border border-whatsapp/20 bg-gradient-to-br from-whatsapp/[0.08] to-transparent p-7 md:p-9">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-whatsapp/15 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-whatsapp">
+            <span className="h-1.5 w-1.5 rounded-full bg-whatsapp" />
+            Como eu resolvo
           </div>
-          <ul className="space-y-4">
-            {solutions.map((s) => (
-              <li key={s} className="flex gap-3">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-whatsapp/20">
-                  <Check className="h-4 w-4 text-whatsapp" strokeWidth={3} />
+          <ul className="space-y-6">
+            {solutions.map(({ icon: Icon, title, text }) => (
+              <li key={title} className="flex gap-4">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-whatsapp/15 text-whatsapp">
+                  <Icon className="h-[18px] w-[18px]" strokeWidth={2} />
                 </span>
-                <span className="text-sm text-foreground/80 md:text-base">{s}</span>
+                <div>
+                  <div className="font-display text-base font-bold text-foreground md:text-lg">{title}</div>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground md:text-[15px]">{text}</p>
+                </div>
               </li>
             ))}
           </ul>
