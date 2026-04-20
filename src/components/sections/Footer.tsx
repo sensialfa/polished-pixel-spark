@@ -35,63 +35,7 @@ export function Footer() {
       <div className="noise-overlay absolute inset-0" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-electric-glow/60 to-transparent" />
 
-      <div className="relative mx-auto max-w-5xl px-5 py-16 md:px-8 md:py-20">
-        {/* CTA strip — centered */}
-        <div className="glass relative overflow-hidden rounded-3xl p-8 text-center md:p-14">
-          <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gradient-to-br from-electric/30 to-whatsapp/20 blur-3xl" />
-          <div className="absolute -left-20 -bottom-20 h-56 w-56 rounded-full bg-gradient-to-tr from-whatsapp/20 to-transparent blur-3xl" />
-
-          <div className="relative flex flex-col items-center">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dark-muted">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp opacity-75" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-whatsapp" />
-              </span>
-              disponível agora
-            </div>
-
-            <h3 className="mx-auto max-w-lg font-display-tight text-3xl leading-[1] md:text-5xl">
-              Sua próxima <span className="gradient-text-animated">página que vende</span>
-            </h3>
-            <h3 className="mx-auto max-w-lg font-display-tight text-3xl leading-[1] md:text-5xl">
-              começa numa conversa.
-            </h3>
-
-            <p className="mx-auto mt-4 max-w-md text-sm text-dark-muted md:text-base">
-              Resposta em poucas horas. Diagnóstico honesto, sem proposta inflada.
-            </p>
-
-            <a
-              href={buildWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shine group relative mt-8 inline-flex items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-whatsapp to-whatsapp-glow px-8 py-4 font-display-tight text-base text-whatsapp-foreground shadow-glow-whatsapp transition-all duration-300 hover:-translate-y-0.5 md:text-lg"
-            >
-              <WhatsAppGlyph className="h-5 w-5" />
-              Chamar no WhatsApp
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-
-            {/* Trust row */}
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-[11px] text-dark-muted">
-              <span className="inline-flex items-center gap-1.5">
-                <Clock className="h-3 w-3 text-electric-glow" /> Resposta &lt; 4h
-              </span>
-              <span className="h-3 w-px bg-white/10" />
-              <span className="inline-flex items-center gap-1.5">
-                <Shield className="h-3 w-3 text-electric-glow" /> Garantia 7 dias
-              </span>
-              <span className="h-3 w-px bg-white/10" />
-              <span className="inline-flex items-center gap-1.5">
-                <Zap className="h-3 w-3 text-electric-glow" /> Entrega sprint
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="my-14 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent md:my-16" />
-
+      <div className="relative mx-auto max-w-5xl px-5 py-14 md:px-8 md:py-20">
         {/* Info grid — 3 columns centered */}
         <div className="grid gap-10 text-center md:grid-cols-3 md:text-left">
           {/* Brand */}
