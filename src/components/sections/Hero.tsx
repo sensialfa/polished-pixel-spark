@@ -17,7 +17,7 @@ export function Hero() {
       <nav className="relative mx-auto mb-10 flex max-w-6xl items-center justify-between md:mb-14">
         <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-dark-muted">
           <span className="h-1.5 w-1.5 rounded-full bg-whatsapp shadow-[0_0_12px_hsl(var(--whatsapp-glow))]" />
-          ev/2025
+          ev/2026
         </div>
         <a
           href="#pricing"
