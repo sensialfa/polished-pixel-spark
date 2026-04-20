@@ -50,10 +50,10 @@ export function Footer() {
               disponível agora
             </div>
 
-            <h3 className="mx-auto max-w-lg font-display-tight text-3xl leading-[0.95] md:text-5xl">
-              Sua próxima{" "}
-              <span className="gradient-text-animated">página que vende</span>
-              <br />
+            <h3 className="mx-auto max-w-lg font-display-tight text-3xl leading-[1] md:text-5xl">
+              Sua próxima <span className="gradient-text-animated">página que vende</span>
+            </h3>
+            <h3 className="mx-auto max-w-lg font-display-tight text-3xl leading-[1] md:text-5xl">
               começa numa conversa.
             </h3>
 
