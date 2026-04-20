@@ -1,4 +1,4 @@
-import { Instagram } from "lucide-react";
+import { Instagram, ArrowUpRight, MapPin, Sparkles } from "lucide-react";
 import { buildWhatsAppLink } from "@/components/WhatsAppButton";
 
 const WhatsAppGlyph = ({ className }: { className?: string }) => (
@@ -7,47 +7,171 @@ const WhatsAppGlyph = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const navLinks = [
+  { label: "Cases", href: "#cases" },
+  { label: "Processo", href: "#processo" },
+  { label: "Investimento", href: "#investimento" },
+  { label: "FAQ", href: "#faq" },
+];
+
+const services = [
+  "Landing pages que convertem",
+  "Tráfego pago Meta + Google",
+  "Pixel + tracking server-side",
+  "Otimização contínua de CPA",
+];
+
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background px-5 py-12 md:px-8 md:py-14">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
-        <div className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-electric to-whatsapp text-base font-black text-white">
-            E
-          </span>
-          <div>
-            <div className="font-display text-lg font-bold tracking-tight">Evandro Carvalho</div>
-            <div className="text-sm text-muted-foreground">
-              Paginas + Trafego pra quem vende infoproduto
+    <footer className="relative overflow-hidden border-t border-white/5 bg-dark-section text-dark-foreground">
+      {/* Aurora background */}
+      <div className="pointer-events-none absolute inset-0 opacity-60">
+        <div className="aurora-orb animate-aurora-1 left-[-10%] top-[-20%] h-[420px] w-[420px] bg-electric/30" />
+        <div className="aurora-orb animate-aurora-2 right-[-10%] bottom-[-30%] h-[480px] w-[480px] bg-whatsapp/25" />
+      </div>
+      <div className="absolute inset-0 bg-grid-dark opacity-[0.18]" />
+      <div className="noise-overlay absolute inset-0" />
+
+      <div className="relative mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
+        {/* CTA strip */}
+        <div className="glass relative overflow-hidden rounded-3xl p-6 md:p-10">
+          <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-gradient-to-br from-electric/40 to-whatsapp/30 blur-3xl" />
+          <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+            <div className="max-w-xl">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dark-muted">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-whatsapp" />
+                </span>
+                disponível · próxima janela
+              </div>
+              <h3 className="font-display-tight text-3xl leading-[0.95] md:text-5xl">
+                Sua próxima <span className="gradient-text-animated">página que vende</span><br />
+                começa numa conversa.
+              </h3>
+              <p className="mt-3 max-w-md text-sm text-dark-muted md:text-base">
+                Resposta em poucas horas. Diagnóstico honesto, sem proposta inflada.
+              </p>
+            </div>
+            <a
+              href={buildWhatsAppLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shine group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-whatsapp to-whatsapp-glow px-6 py-4 font-display-tight text-base text-whatsapp-foreground shadow-glow-whatsapp transition-all duration-300 hover:-translate-y-0.5 md:text-lg"
+            >
+              <WhatsAppGlyph className="h-5 w-5" />
+              Chamar no WhatsApp
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </div>
+        </div>
+
+        {/* Main grid */}
+        <div className="mt-16 grid gap-12 md:grid-cols-12">
+          {/* Brand */}
+          <div className="md:col-span-5">
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                <div className="orbital-ring absolute -inset-1 rounded-2xl opacity-70" />
+                <span className="relative grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-electric to-whatsapp font-display-tight text-xl text-white">
+                  E
+                </span>
+              </div>
+              <div>
+                <div className="font-display-tight text-xl tracking-tight">Evandro Carvalho</div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-dark-muted">
+                  dev · ads · conversão
+                </div>
+              </div>
+            </div>
+            <p className="mt-5 max-w-sm text-pretty text-sm leading-relaxed text-dark-muted">
+              Construo páginas e tráfego para quem vende infoproduto e cansou de investir em coisa
+              bonita que não converte. Foco em métrica, não em prêmio.
+            </p>
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-dark-muted">
+              <MapPin className="h-3.5 w-3.5 text-electric-glow" />
+              Brasil · atendendo remoto
+            </div>
+          </div>
+
+          {/* Nav */}
+          <div className="md:col-span-3">
+            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+              Navegação
+            </div>
+            <ul className="mt-5 space-y-3">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 text-sm text-dark-foreground/85 transition-colors hover:text-electric-glow"
+                  >
+                    <span className="h-px w-4 bg-white/15 transition-all group-hover:w-8 group-hover:bg-electric-glow" />
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div className="md:col-span-4">
+            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+              O que entrego
+            </div>
+            <ul className="mt-5 space-y-3">
+              {services.map((s) => (
+                <li key={s} className="flex items-start gap-2 text-sm text-dark-foreground/85">
+                  <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0 text-whatsapp-glow" />
+                  {s}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6 flex items-center gap-3">
+              <a
+                href="https://instagram.com/goupcreations"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-electric/60 hover:bg-electric/10 hover:text-electric-glow"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-[18px] w-[18px]" />
+              </a>
+              <a
+                href={buildWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-whatsapp/60 hover:bg-whatsapp/10 hover:text-whatsapp-glow"
+                aria-label="WhatsApp"
+              >
+                <WhatsAppGlyph className="h-[18px] w-[18px]" />
+              </a>
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-3">
-          <a
-            href="https://instagram.com/goupcreations"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-electric hover:text-electric"
-            aria-label="Instagram"
+
+        {/* Giant wordmark */}
+        <div className="relative mt-20 overflow-hidden">
+          <div
+            className="font-display-tight text-[22vw] leading-[0.85] text-transparent md:text-[14rem]"
+            style={{
+              WebkitTextStroke: "1px hsl(var(--dark-foreground) / 0.12)",
+            }}
+            aria-hidden="true"
           >
-            <Instagram className="h-[18px] w-[18px]" />
-          </a>
-          <a
-            href={buildWhatsAppLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-whatsapp hover:text-whatsapp"
-            aria-label="WhatsApp"
-          >
-            <WhatsAppGlyph className="h-[18px] w-[18px]" />
-          </a>
+            EVANDRO.DEV
+          </div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(240_40%_5%)] to-transparent" />
         </div>
-      </div>
-      <div className="mx-auto mt-10 flex max-w-6xl flex-col items-center justify-between gap-3 border-t border-border pt-6 text-center text-xs text-muted-foreground md:flex-row md:text-left">
-        <span>© {new Date().getFullYear()} Evandro Carvalho · CNPJ sob solicitacao</span>
-        <span className="text-muted-foreground/70">
-          Construido em <span className="text-foreground/80">7 dias</span>, igual aos seus.
-        </span>
+
+        {/* Bottom bar */}
+        <div className="relative mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-dark-muted md:flex-row md:text-left">
+          <span>© {new Date().getFullYear()} Evandro Carvalho · CNPJ sob solicitação</span>
+          <span className="flex items-center gap-2">
+            <span className="inline-block h-1 w-1 rounded-full bg-whatsapp" />
+            construído em 7 dias · igual aos seus
+          </span>
+        </div>
       </div>
     </footer>
   );
