@@ -1,9 +1,10 @@
-import { ArrowDown, Zap } from "lucide-react";
+import { ArrowDown, Sparkles, Zap } from "lucide-react";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import portrait from "@/assets/evandro-portrait.jpg";
 
 export function Hero() {
   return (
-    <section className="scan-line relative overflow-hidden bg-dark-section px-5 pb-24 pt-14 text-dark-foreground md:px-8 md:pb-32 md:pt-20">
+    <section className="scan-line noise-overlay relative overflow-hidden bg-dark-section px-5 pb-24 pt-8 text-dark-foreground md:px-8 md:pb-32 md:pt-10">
       {/* Animated aurora background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="aurora-orb animate-aurora-1 -top-32 right-[5%] h-[520px] w-[520px] bg-electric/35" />
@@ -12,31 +13,66 @@ export function Hero() {
       </div>
       <div className="absolute inset-0 bg-grid-dark opacity-30 [mask-image:radial-gradient(ellipse_70%_55%_at_50%_30%,black,transparent)]" />
 
-      {/* Nav */}
-      <nav className="relative mx-auto mb-14 flex max-w-6xl items-center justify-between md:mb-20">
-        <div className="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight">
-          <span className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-xl bg-gradient-to-br from-electric-glow via-electric to-whatsapp text-sm font-black text-dark shadow-glow-electric">
-            E
-            <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-60" />
-          </span>
-          <span>Evandro<span className="text-electric-glow">.</span></span>
+      {/* Top bar — minimal, brand mark left, version chip right */}
+      <nav className="relative mx-auto mb-10 flex max-w-6xl items-center justify-between md:mb-14">
+        <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-dark-muted">
+          <span className="h-1.5 w-1.5 rounded-full bg-whatsapp shadow-[0_0_12px_hsl(var(--whatsapp-glow))]" />
+          ev/2025
         </div>
-        <div className="hidden items-center gap-2 md:flex">
-          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-dark-muted">
-            v.2025
-          </span>
-          <a
-            href="#pricing"
-            className="rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium text-dark-foreground/90 backdrop-blur transition-all duration-300 hover:border-electric-glow/40 hover:bg-white/10 hover:shadow-[0_0_24px_-4px_hsl(var(--electric)/0.4)]"
-          >
-            Ver pacote
-          </a>
-        </div>
+        <a
+          href="#pricing"
+          className="hidden rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium text-dark-foreground/90 backdrop-blur transition-all duration-300 hover:border-electric-glow/40 hover:bg-white/10 hover:shadow-[0_0_24px_-4px_hsl(var(--electric)/0.4)] md:block"
+        >
+          Ver pacote →
+        </a>
       </nav>
 
-      <div className="relative mx-auto max-w-5xl text-center">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center text-center">
+        {/* Centered avatar — large, with orbital ring + name */}
+        <div className="animate-fade-up relative mb-7 md:mb-9">
+          {/* Orbital rotating ring */}
+          <div className="absolute inset-0 -m-3 rounded-full">
+            <div className="orbital-ring absolute inset-0 rounded-full opacity-70 blur-[2px]" />
+          </div>
+          {/* Soft halo */}
+          <div className="absolute inset-0 -m-8 rounded-full bg-gradient-to-br from-electric/30 via-whatsapp/20 to-gold/20 blur-3xl" />
+
+          {/* Avatar */}
+          <div className="relative h-32 w-32 overflow-hidden rounded-full border-2 border-white/15 bg-dark shadow-[0_20px_70px_-15px_hsl(var(--electric)/0.6)] md:h-44 md:w-44">
+            <img
+              src={portrait}
+              alt="Evandro Carvalho"
+              width={400}
+              height={400}
+              className="h-full w-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/40 via-transparent to-transparent" />
+          </div>
+
+          {/* Floating verified-style tag */}
+          <div className="float-tag-a absolute -right-2 -top-1 flex items-center gap-1 rounded-full border border-white/10 bg-dark/80 px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-whatsapp-glow backdrop-blur md:-right-4 md:top-2">
+            <span className="h-1.5 w-1.5 animate-ping rounded-full bg-whatsapp" />
+            online
+          </div>
+          {/* Floating role tag */}
+          <div className="float-tag-b absolute -bottom-2 -left-3 hidden items-center gap-1.5 rounded-full border border-white/10 bg-dark/80 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-electric-glow backdrop-blur md:flex">
+            <Sparkles className="h-3 w-3" />
+            dev + ads
+          </div>
+        </div>
+
+        {/* Name + role */}
+        <div className="animate-fade-up delay-100 mb-2 flex flex-col items-center gap-1">
+          <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+            Evandro Carvalho
+          </h2>
+          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-dark-muted">
+            full-stack <span className="text-electric-glow">×</span> performance ads
+          </p>
+        </div>
+
         {/* Status badge */}
-        <div className="animate-fade-up mx-auto mb-8 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-dark-foreground/85 backdrop-blur-md">
+        <div className="animate-fade-up delay-200 mt-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-dark-foreground/85 backdrop-blur-md">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-whatsapp" />
@@ -49,7 +85,7 @@ export function Hero() {
         </div>
 
         {/* Headline — line-by-line reveal */}
-        <h1 className="text-balance font-display text-[44px] font-bold leading-[0.92] tracking-[-0.035em] md:text-7xl lg:text-[96px]">
+        <h1 className="mt-8 text-balance font-display text-[44px] font-bold leading-[0.92] tracking-[-0.035em] md:text-7xl lg:text-[88px]">
           <span className="reveal-mask">
             <span className="reveal-line">Sua oferta merece</span>
           </span>
@@ -63,21 +99,21 @@ export function Hero() {
           <span className="reveal-mask">
             <span className="reveal-line delay-300 relative">
               <span className="gradient-text-animated">vende sozinha.</span>
-              <span className="font-serif-display absolute -right-3 -top-3 text-3xl text-whatsapp-glow md:-right-5 md:-top-6 md:text-5xl">*</span>
+              <span className="font-serif absolute -right-3 -top-3 text-3xl italic text-whatsapp-glow md:-right-5 md:-top-6 md:text-5xl">*</span>
             </span>
           </span>
         </h1>
 
         {/* Subhead */}
-        <p className="animate-fade-up delay-400 mx-auto mt-7 max-w-2xl text-pretty text-base text-dark-foreground/65 md:text-xl md:leading-relaxed">
-          Construo <span className="text-dark-foreground">paginas de venda</span> + estrutura de
-          <span className="text-dark-foreground"> trafego pago</span> para infoprodutores que ja faturam,
-          mas perdem dinheiro em conversao. No ar em{" "}
+        <p className="animate-fade-up delay-500 mx-auto mt-7 max-w-2xl text-pretty text-base text-dark-foreground/65 md:text-xl md:leading-relaxed">
+          Construo <span className="text-dark-foreground">páginas de venda</span> + estrutura de
+          <span className="text-dark-foreground"> tráfego pago</span> para infoprodutores que já faturam,
+          mas perdem dinheiro em conversão. No ar em{" "}
           <span className="font-mono text-whatsapp-glow">7 dias</span>.
         </p>
 
         {/* CTAs */}
-        <div className="animate-fade-up delay-500 mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
+        <div className="animate-fade-up delay-700 mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
           <WhatsAppButton size="lg" glow>
             Quero uma estrutura assim
           </WhatsAppButton>
@@ -90,17 +126,17 @@ export function Hero() {
           </a>
         </div>
 
-        <p className="animate-fade-up delay-700 mt-6 inline-flex items-center gap-1.5 text-xs text-dark-muted">
+        <p className="animate-fade-up delay-900 mt-6 inline-flex items-center gap-1.5 text-xs text-dark-muted">
           <Zap className="h-3 w-3 text-gold" fill="currentColor" />
-          Sem agencia, sem ruido. Voce fala direto com quem executa.
+          Sem agência, sem ruído. Você fala direto com quem executa.
         </p>
 
         {/* Stats strip — premium glass */}
-        <div className="animate-fade-up delay-700 mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] backdrop-blur-xl md:mt-24 md:grid-cols-4">
+        <div className="animate-fade-up delay-900 mt-20 grid w-full grid-cols-2 gap-px overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] backdrop-blur-xl md:mt-24 md:grid-cols-4">
           <Stat value="R$ 2M+" label="gerenciados em ads" />
-          <Stat value="40+" label="paginas no ar" />
+          <Stat value="40+" label="páginas no ar" />
           <Stat value="7 dias" label="do briefing ao live" />
-          <Stat value="3.4x" label="ROAS medio dos clientes" />
+          <Stat value="3.4x" label="ROAS médio dos clientes" />
         </div>
       </div>
     </section>
