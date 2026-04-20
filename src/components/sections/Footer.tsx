@@ -208,26 +208,25 @@ export function Footer() {
         </div>
 
         {/* Giant wordmark */}
-        <div className="relative mt-12 overflow-hidden">
+        <div className="relative mt-12 overflow-hidden text-center">
           <div
-            className="font-display-tight text-[22vw] leading-[0.85] text-transparent md:text-[14rem]"
+            className="font-display-tight text-[28vw] leading-[0.85] text-transparent md:text-[14rem]"
             style={{
               WebkitTextStroke: "1px hsl(var(--dark-foreground) / 0.14)",
             }}
             aria-hidden="true"
           >
-            EVANDRO.DEV
+            ONLINE
           </div>
-          {/* Animated underline */}
-          <div className="relative mt-4 h-px overflow-hidden">
+          <div className="relative mx-auto mt-4 h-px w-full overflow-hidden">
             <div className="absolute inset-y-0 left-0 w-1/3 animate-marquee bg-gradient-to-r from-transparent via-electric-glow to-transparent" />
           </div>
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[hsl(240_40%_5%)] to-transparent" />
         </div>
 
         {/* Bottom bar */}
-        <div className="relative mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-dark-muted md:flex-row md:text-left">
-          <span>© {new Date().getFullYear()} Evandro Carvalho · CNPJ sob solicitação</span>
+        <div className="relative mt-10 flex flex-col items-center justify-center gap-4 border-t border-white/5 pt-8 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-dark-muted">
+          <span>© 2026 Evandro Carvalho · CNPJ sob solicitação</span>
           <div className="flex items-center gap-4">
             <a href="#" className="transition-colors hover:text-dark-foreground">Privacidade</a>
             <span className="h-3 w-px bg-white/10" />
