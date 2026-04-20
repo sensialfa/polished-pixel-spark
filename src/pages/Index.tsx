@@ -14,8 +14,8 @@ const Index = () => {
   return (
     <main className="relative min-h-screen bg-background">
       {/* Blur edges top & bottom */}
-      <div className="pointer-events-none fixed inset-x-0 top-0 z-[100] h-16 bg-gradient-to-b from-background/40 to-transparent" />
-      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[100] h-16 bg-gradient-to-t from-background/40 to-transparent" />
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-[100] h-16 backdrop-blur-[1.5px]" style={{ maskImage: "linear-gradient(to bottom, black, transparent)" }} />
+      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[100] h-16 backdrop-blur-[1.5px]" style={{ maskImage: "linear-gradient(to top, black, transparent)" }} />
 
       {/* Cursor light */}
       <CursorGlow />
