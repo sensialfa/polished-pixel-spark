@@ -85,21 +85,21 @@ export function Hero() {
         </div>
 
         {/* Headline — line-by-line reveal */}
-        <h1 className="mx-auto mt-8 w-full max-w-5xl text-center font-display text-[28px] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-[40px] md:text-[64px] lg:text-[82px]">
+        <h1 className="mx-auto mt-8 w-full max-w-5xl text-center font-display text-[30px] font-black leading-[0.95] tracking-[-0.03em] drop-shadow-[0_0_60px_hsl(var(--electric)/0.3)] sm:text-[44px] md:text-[68px] lg:text-[86px]">
           <span className="block">
             <span className="reveal-mask">
               <span className="reveal-line">Sua empresa merece uma</span>
             </span>
           </span>
-          <span className="block sm:mt-1">
+          <span className="block">
             <span className="reveal-mask">
               <span className="reveal-line delay-100">estrutura que vende</span>
             </span>
           </span>
-          <span className="block sm:mt-1">
+          <span className="block">
             <span className="reveal-mask">
               <span className="reveal-line delay-200 relative inline-block">
-                <span className="gradient-text-animated text-[34px] font-black drop-shadow-[0_0_40px_hsl(var(--electric)/0.5)] sm:text-[48px] md:text-[76px] lg:text-[98px]">no automático.</span>
+                <span className="gradient-text-animated drop-shadow-[0_0_50px_hsl(var(--electric)/0.6)]">no automático.</span>
                 <span className="font-serif absolute -right-2 -top-2 text-2xl italic text-whatsapp-glow md:-right-5 md:-top-5 md:text-5xl">*</span>
               </span>
             </span>
