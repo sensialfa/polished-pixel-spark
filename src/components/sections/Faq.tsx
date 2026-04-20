@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Section } from "@/components/Section";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const faqs = [
   {
@@ -36,31 +37,34 @@ const faqs = [
 export function Faq() {
   return (
     <Section>
-      <div className="mx-auto max-w-3xl text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">FAQ</span>
-        <h2 className="mt-4 text-balance font-display text-3xl font-bold leading-[1.05] md:text-5xl lg:text-6xl">
-          As dúvidas que <span className="font-serif-display text-whatsapp">sempre</span> aparecem.
-        </h2>
-        <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-muted-foreground md:text-lg">
-          Se a sua não está aqui, manda no WhatsApp — eu respondo pessoalmente.
-        </p>
-      </div>
+      <RevealOnScroll variant="blur">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">FAQ</span>
+          <h2 className="mt-4 text-balance font-display text-3xl font-bold leading-[1.05] md:text-5xl lg:text-6xl">
+            As dúvidas que <span className="font-serif-display text-whatsapp">sempre</span> aparecem.
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-muted-foreground md:text-lg">
+            Se a sua não está aqui, manda no WhatsApp — eu respondo pessoalmente.
+          </p>
+        </div>
+      </RevealOnScroll>
 
       <div className="mx-auto mt-12 max-w-3xl">
         <Accordion type="single" collapsible className="space-y-3">
           {faqs.map((item, i) => (
-            <AccordionItem
-              key={i}
-              value={`item-${i}`}
-              className="overflow-hidden rounded-2xl border border-border bg-card px-5 shadow-soft transition-colors data-[state=open]:border-electric/30 md:px-7"
-            >
-              <AccordionTrigger className="py-5 text-left font-display text-base font-bold tracking-tight hover:no-underline md:text-lg">
-                {item.q}
-              </AccordionTrigger>
-              <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
-                {item.a}
-              </AccordionContent>
-            </AccordionItem>
+            <RevealOnScroll key={i} variant="fade-up" delay={i * 80}>
+              <AccordionItem
+                value={`item-${i}`}
+                className="overflow-hidden rounded-2xl border border-border bg-card px-5 shadow-soft transition-colors data-[state=open]:border-electric/30 md:px-7"
+              >
+                <AccordionTrigger className="py-5 text-left font-display text-base font-bold tracking-tight hover:no-underline md:text-lg">
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
+            </RevealOnScroll>
           ))}
         </Accordion>
       </div>

@@ -1,6 +1,7 @@
 import { Check, Layout, Megaphone, ShieldCheck, Clock, Zap, Sparkles, type LucideIcon } from "lucide-react";
 import { Section } from "@/components/Section";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const pageFeatures = [
   "Página responsiva, otimizada pra carregar em < 2s",
@@ -28,88 +29,98 @@ export function Pricing() {
       <div className="aurora-orb animate-aurora-2 -bottom-32 right-1/4 h-[400px] w-[400px] bg-whatsapp/15" />
       <div className="aurora-orb animate-aurora-3 top-1/2 left-1/2 h-[300px] w-[300px] bg-gold/10" />
 
-      <div className="relative mx-auto max-w-3xl text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-electric/20 bg-electric/[0.08] px-4 py-1.5 backdrop-blur-sm">
-          <Sparkles className="h-3.5 w-3.5 text-electric-glow" />
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-electric-glow">
-            Pacote completo
-          </span>
-        </div>
-
-        <h2 className="mt-6 text-balance font-display text-3xl font-bold leading-[1.05] md:text-5xl lg:text-6xl">
-          Tudo entregue por
-        </h2>
-
-        <div className="mx-auto mt-6 inline-flex flex-col items-center gap-2">
-          <span className="text-dark-muted line-through font-serif-display text-2xl md:text-3xl">
-            R$ 3.500
-          </span>
-          <div className="relative">
-            <span className="gradient-text-animated text-5xl font-bold font-display tracking-tight md:text-7xl lg:text-8xl">
-              R$ 1.997
+      <RevealOnScroll variant="blur">
+        <div className="relative mx-auto max-w-3xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-electric/20 bg-electric/[0.08] px-4 py-1.5 backdrop-blur-sm">
+            <Sparkles className="h-3.5 w-3.5 text-electric-glow" />
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-electric-glow">
+              Pacote completo
             </span>
-            <div className="absolute -inset-4 -z-10 rounded-3xl bg-electric/[0.06] blur-2xl" />
           </div>
-          <div className="mt-1 inline-flex items-center gap-1.5 rounded-full bg-whatsapp/15 px-3 py-1">
-            <Zap className="h-3 w-3 text-whatsapp-glow" strokeWidth={2.5} />
-            <span className="text-xs font-semibold text-whatsapp-glow">Pagamento único</span>
-          </div>
-        </div>
 
-        <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-dark-muted md:text-lg">
-          Sem mensalidade escondida, sem fee surpresa no fim do mês.
-        </p>
-      </div>
+          <h2 className="mt-6 text-balance font-display text-3xl font-bold leading-[1.05] md:text-5xl lg:text-6xl">
+            Tudo entregue por
+          </h2>
+
+          <div className="mx-auto mt-6 inline-flex flex-col items-center gap-2">
+            <span className="text-dark-muted line-through font-serif-display text-2xl md:text-3xl">
+              R$ 3.500
+            </span>
+            <div className="relative">
+              <span className="gradient-text-animated text-5xl font-bold font-display tracking-tight md:text-7xl lg:text-8xl">
+                R$ 1.997
+              </span>
+              <div className="absolute -inset-4 -z-10 rounded-3xl bg-electric/[0.06] blur-2xl" />
+            </div>
+            <div className="mt-1 inline-flex items-center gap-1.5 rounded-full bg-whatsapp/15 px-3 py-1">
+              <Zap className="h-3 w-3 text-whatsapp-glow" strokeWidth={2.5} />
+              <span className="text-xs font-semibold text-whatsapp-glow">Pagamento único</span>
+            </div>
+          </div>
+
+          <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-dark-muted md:text-lg">
+            Sem mensalidade escondida, sem fee surpresa no fim do mês.
+          </p>
+        </div>
+      </RevealOnScroll>
 
       <div className="relative mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-2">
-        <PricingCard
-          icon={Layout}
-          title="Página de Vendas"
-          subtitle="Estrutura que converte"
-          features={pageFeatures}
-          gradientFrom="from-electric/20"
-          gradientTo="to-electric/5"
-          accentColor="text-electric-glow"
-          checkBg="bg-electric/15"
-          borderColor="border-electric/15"
-        />
-        <PricingCard
-          icon={Megaphone}
-          title="Tráfego Pago"
-          subtitle="Tráfego que escala"
-          features={trafficFeatures}
-          gradientFrom="from-whatsapp/20"
-          gradientTo="to-whatsapp/5"
-          accentColor="text-whatsapp-glow"
-          checkBg="bg-whatsapp/15"
-          borderColor="border-whatsapp/15"
-          highlight
-        />
+        <RevealOnScroll variant="fade-right" delay={100}>
+          <PricingCard
+            icon={Layout}
+            title="Página de Vendas"
+            subtitle="Estrutura que converte"
+            features={pageFeatures}
+            gradientFrom="from-electric/20"
+            gradientTo="to-electric/5"
+            accentColor="text-electric-glow"
+            checkBg="bg-electric/15"
+            borderColor="border-electric/15"
+          />
+        </RevealOnScroll>
+        <RevealOnScroll variant="fade-left" delay={200}>
+          <PricingCard
+            icon={Megaphone}
+            title="Tráfego Pago"
+            subtitle="Tráfego que escala"
+            features={trafficFeatures}
+            gradientFrom="from-whatsapp/20"
+            gradientTo="to-whatsapp/5"
+            accentColor="text-whatsapp-glow"
+            checkBg="bg-whatsapp/15"
+            borderColor="border-whatsapp/15"
+            highlight
+          />
+        </RevealOnScroll>
       </div>
 
-      <div className="relative mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2">
-        <div className="flex items-start gap-3 rounded-2xl border border-gold/20 bg-gold/[0.04] p-5 backdrop-blur-sm">
-          <Clock className="h-5 w-5 shrink-0 text-gold" strokeWidth={2.2} />
-          <p className="text-sm font-medium leading-relaxed text-dark-foreground/90">
-            Atendo no máximo <strong className="text-gold">5 clientes por mês</strong> pra garantir entrega no prazo.
-          </p>
+      <RevealOnScroll variant="fade-up" delay={300}>
+        <div className="relative mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2">
+          <div className="flex items-start gap-3 rounded-2xl border border-gold/20 bg-gold/[0.04] p-5 backdrop-blur-sm">
+            <Clock className="h-5 w-5 shrink-0 text-gold" strokeWidth={2.2} />
+            <p className="text-sm font-medium leading-relaxed text-dark-foreground/90">
+              Atendo no máximo <strong className="text-gold">5 clientes por mês</strong> pra garantir entrega no prazo.
+            </p>
+          </div>
+          <div className="flex items-start gap-3 rounded-2xl border border-whatsapp/20 bg-whatsapp/[0.04] p-5 backdrop-blur-sm">
+            <ShieldCheck className="h-5 w-5 shrink-0 text-whatsapp-glow" strokeWidth={2.2} />
+            <p className="text-sm font-medium leading-relaxed text-dark-foreground/90">
+              <strong className="text-whatsapp-glow">Garantia de entrega em 7 dias</strong> úteis ou você não paga a segunda parcela.
+            </p>
+          </div>
         </div>
-        <div className="flex items-start gap-3 rounded-2xl border border-whatsapp/20 bg-whatsapp/[0.04] p-5 backdrop-blur-sm">
-          <ShieldCheck className="h-5 w-5 shrink-0 text-whatsapp-glow" strokeWidth={2.2} />
-          <p className="text-sm font-medium leading-relaxed text-dark-foreground/90">
-            <strong className="text-whatsapp-glow">Garantia de entrega em 7 dias</strong> úteis ou você não paga a segunda parcela.
-          </p>
-        </div>
-      </div>
+      </RevealOnScroll>
 
-      <div className="relative mt-12 text-center">
-        <WhatsAppButton size="lg" glow>
-          Quero garantir minha vaga
-        </WhatsAppButton>
-        <p className="mt-4 text-xs text-dark-muted">
-          Investimento em ads é separado · sugiro budget mínimo de R$ 50/dia
-        </p>
-      </div>
+      <RevealOnScroll variant="zoom" delay={400}>
+        <div className="relative mt-12 text-center">
+          <WhatsAppButton size="lg" glow>
+            Quero garantir minha vaga
+          </WhatsAppButton>
+          <p className="mt-4 text-xs text-dark-muted">
+            Investimento em ads é separado · sugiro budget mínimo de R$ 50/dia
+          </p>
+        </div>
+      </RevealOnScroll>
     </Section>
   );
 }
