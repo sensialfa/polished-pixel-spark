@@ -8,10 +8,18 @@ import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { CursorGlow } from "@/components/CursorGlow";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="relative min-h-screen bg-background">
+      {/* Blur edges top & bottom */}
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-[100] h-24 bg-gradient-to-b from-background via-background/60 to-transparent backdrop-blur-[2px]" style={{ maskImage: "linear-gradient(to bottom, black 30%, transparent)" }} />
+      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[100] h-24 bg-gradient-to-t from-background via-background/60 to-transparent backdrop-blur-[2px]" style={{ maskImage: "linear-gradient(to top, black 30%, transparent)" }} />
+
+      {/* Cursor light */}
+      <CursorGlow />
+
       <Hero />
       <ProblemSolution />
       <Cases />
