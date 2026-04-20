@@ -11,18 +11,18 @@ export function FinalCta() {
       <div className="relative mx-auto max-w-3xl text-center">
         <div className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-dark-foreground/80 backdrop-blur">
           <Sparkles className="h-3 w-3 text-gold" />
-          So 3 vagas em maio
+          Só 3 vagas em maio
         </div>
 
         <h2 className="text-balance font-display text-3xl font-bold leading-[1.02] md:text-5xl lg:text-7xl">
-          Seu proximo lancamento
+          Seu próximo lançamento
           <br />
           merece uma estrutura{" "}
-          <span className="font-serif-display gradient-text-brand">a altura.</span>
+          <span className="font-serif-display gradient-text-brand">à altura.</span>
         </h2>
         <p className="mx-auto mt-7 max-w-xl text-pretty text-base text-dark-foreground/70 md:text-xl">
-          15 minutos no WhatsApp e voce sai com um diagnostico claro do que esta travando seu
-          faturamento — independente de fechar comigo ou nao.
+          15 minutos no WhatsApp e você sai com um diagnóstico claro do que está travando seu
+          faturamento — independente de fechar comigo ou não.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4">
@@ -30,7 +30,7 @@ export function FinalCta() {
             Quero conversar agora
           </WhatsAppButton>
           <p className="text-sm text-dark-muted">
-            Sem compromisso. Se nao fizer sentido pro seu momento, eu te falo na hora.
+            Sem compromisso. Se não fizer sentido pro seu momento, eu te falo na hora.
           </p>
         </div>
       </div>

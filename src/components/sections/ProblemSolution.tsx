@@ -4,36 +4,36 @@ import { Section } from "@/components/Section";
 const problems = [
   {
     icon: EyeOff,
-    title: "Pagina amadora",
-    text: "Layout copiado de template, copy generica, zero hierarquia visual. Visitante chega, olha e fecha em 6 segundos.",
+    title: "Página amadora",
+    text: "Layout copiado de template, copy genérica, zero hierarquia visual. Visitante chega, olha e fecha em 6 segundos.",
   },
   {
     icon: Flame,
     title: "Ads queimando dinheiro",
-    text: "Campanha sem segmentacao real, criativo fraco e zero teste estruturado. CPL nas alturas, ROAS no vermelho.",
+    text: "Campanha sem segmentação real, criativo fraco e zero teste estruturado. CPL nas alturas, ROAS no vermelho.",
   },
   {
     icon: TrendingDown,
     title: "Concorrente passando por cima",
-    text: "Enquanto voce tenta resolver no improviso, quem entendeu o jogo ja escalou pra 6 digitos por mes.",
+    text: "Enquanto você tenta resolver no improviso, quem entendeu o jogo já escalou pra 6 dígitos por mês.",
   },
 ];
 
 const solutions = [
   {
     icon: Target,
-    title: "Pagina que converte",
-    text: "Copy persuasiva, design que guia o olhar e gatilhos posicionados onde o visitante ja esta pronto pra clicar.",
+    title: "Página que converte",
+    text: "Copy persuasiva, design que guia o olhar e gatilhos posicionados onde o visitante já está pronto pra clicar.",
   },
   {
     icon: Compass,
-    title: "Trafego com bussola",
-    text: "Segmentacao cirurgica, criativo testado e estrutura de funil que entrega o lead certo pelo menor custo possivel.",
+    title: "Tráfego com bússola",
+    text: "Segmentação cirúrgica, criativo testado e estrutura de funil que entrega o lead certo pelo menor custo possível.",
   },
   {
     icon: Zap,
     title: "7 dias do zero ao live",
-    text: "Voce nao espera meses por uma agencia. Em 1 semana sua estrutura esta no ar, rodando e gerando vendas.",
+    text: "Você não espera meses por uma agência. Em 1 semana sua estrutura está no ar, rodando e gerando vendas.",
   },
 ];
 
@@ -42,15 +42,15 @@ export function ProblemSolution() {
     <Section>
       <div className="mx-auto max-w-3xl text-center">
         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">
-          O diagnostico
+          O diagnóstico
         </span>
         <h2 className="mt-4 text-balance font-display text-3xl font-bold leading-[1.05] md:text-5xl lg:text-6xl">
-          Seu produto e bom.
+          Seu produto é bom.
           <br />
-          <span className="font-serif-display text-destructive">Sua estrutura de venda</span> nao.
+          <span className="font-serif-display text-destructive">Sua estrutura de venda</span> não.
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-muted-foreground md:text-lg">
-          90% dos infoprodutores que travaram no faturamento tem o mesmo problema — e quase nunca e
+          90% dos infoprodutores que travaram no faturamento têm o mesmo problema — e quase nunca é
           o produto.
         </p>
       </div>

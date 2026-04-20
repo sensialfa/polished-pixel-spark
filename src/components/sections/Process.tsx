@@ -4,30 +4,30 @@ import { Section } from "@/components/Section";
 const steps = [
   {
     days: "Dia 1 — 2",
-    label: "Diagnostico",
-    title: "Mergulho no produto, no publico e na oferta",
-    desc: "Reuniao estrategica de 60 min, analise da concorrencia e desenho do funil ideal pro seu modelo de venda.",
+    label: "Diagnóstico",
+    title: "Mergulho no produto, no público e na oferta",
+    desc: "Reunião estratégica de 60 min, análise da concorrência e desenho do funil ideal pro seu modelo de venda.",
     icon: Compass,
   },
   {
     days: "Dia 3 — 4",
-    label: "Construcao",
-    title: "Pagina de vendas com copy que ataca a duvida certa",
-    desc: "Wireframe, copy persuasiva, design responsivo e integracao com checkout (Hotmart, Kiwify ou Eduzz).",
+    label: "Construção",
+    title: "Página de vendas com copy que ataca a dúvida certa",
+    desc: "Wireframe, copy persuasiva, design responsivo e integração com checkout (Hotmart, Kiwify ou Eduzz).",
     icon: PenTool,
   },
   {
     days: "Dia 5 — 6",
-    label: "Trafego",
+    label: "Tráfego",
     title: "Setup completo das campanhas Meta Ads",
-    desc: "Estrutura de campanhas, segmentacao por interesse e lookalike, 3 variacoes de criativo e pixel calibrado.",
+    desc: "Estrutura de campanhas, segmentação por interesse e lookalike, 3 variações de criativo e pixel calibrado.",
     icon: Crosshair,
   },
   {
     days: "Dia 7",
     label: "Live",
     title: "Tudo no ar, rodando e gerando vendas",
-    desc: "Campanha publicada, dashboard de acompanhamento entregue e os primeiros 7 dias de otimizacao por minha conta.",
+    desc: "Campanha publicada, dashboard de acompanhamento entregue e os primeiros 7 dias de otimização por minha conta.",
     icon: Rocket,
   },
 ];
@@ -45,7 +45,7 @@ export function Process() {
           checkout em <span className="font-serif-display text-whatsapp">7 dias.</span>
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-muted-foreground md:text-lg">
-          Sem reuniao desnecessaria, sem espera de aprovacao em 4 niveis. Voce fala direto comigo.
+          Sem reunião desnecessária, sem espera de aprovação em 4 níveis. Você fala direto comigo.
         </p>
       </div>
 
