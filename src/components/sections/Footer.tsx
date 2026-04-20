@@ -1,5 +1,6 @@
 import { Instagram, ArrowUpRight, MapPin, Sparkles, Mail, Phone } from "lucide-react";
 import { buildWhatsAppLink } from "@/components/WhatsAppButton";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 import portrait from "@/assets/evandro-portrait.jpg";
 
 const WhatsAppGlyph = ({ className }: { className?: string }) => (
@@ -35,143 +36,147 @@ export function Footer() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-electric-glow/60 to-transparent" />
 
       <div className="relative mx-auto max-w-5xl px-6 py-14 md:px-8 md:py-20">
-        {/* Brand header — centered on mobile */}
-        <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-5">
-          <div className="relative shrink-0">
-            <div className="orbital-ring absolute -inset-1.5 rounded-full opacity-60" />
-            <img
-              src={portrait}
-              alt="Evandro Carvalho"
-              className="relative h-14 w-14 rounded-full border border-white/15 object-cover object-center"
-            />
-          </div>
-          <div className="text-center md:text-left">
-            <div className="font-display text-lg font-bold tracking-tight text-white">
-              Evandro Carvalho
+        <RevealOnScroll variant="fade-up">
+          <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-5">
+            <div className="relative shrink-0">
+              <div className="orbital-ring absolute -inset-1.5 rounded-full opacity-60" />
+              <img
+                src={portrait}
+                alt="Evandro Carvalho"
+                className="relative h-14 w-14 rounded-full border border-white/15 object-cover object-center"
+              />
             </div>
-            <p className="mt-0.5 text-sm leading-relaxed text-dark-muted">
-              Páginas e tráfego para quem vende infoproduto e quer converter de verdade.
-            </p>
+            <div className="text-center md:text-left">
+              <div className="font-display text-lg font-bold tracking-tight text-white">
+                Evandro Carvalho
+              </div>
+              <p className="mt-0.5 text-sm leading-relaxed text-dark-muted">
+                Páginas e tráfego para quem vende infoproduto e quer converter de verdade.
+              </p>
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
 
-        {/* Divider */}
         <div className="my-10 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
 
-        {/* Grid — 4 columns on desktop, stacked on mobile */}
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-          {/* Navigation */}
-          <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
-              Navegação
+          <RevealOnScroll variant="fade-up" delay={0}>
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+                Navegação
+              </div>
+              <ul className="mt-4 space-y-2.5">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="group inline-flex items-center gap-2 text-sm text-dark-foreground/80 transition-colors hover:text-electric-glow"
+                    >
+                      <span className="h-px w-3 bg-white/15 transition-all group-hover:w-6 group-hover:bg-electric-glow" />
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="mt-4 space-y-2.5">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="group inline-flex items-center gap-2 text-sm text-dark-foreground/80 transition-colors hover:text-electric-glow"
-                  >
-                    <span className="h-px w-3 bg-white/15 transition-all group-hover:w-6 group-hover:bg-electric-glow" />
-                    {link.label}
+          </RevealOnScroll>
+
+          <RevealOnScroll variant="fade-up" delay={80}>
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+                O que entrego
+              </div>
+              <ul className="mt-4 space-y-2.5">
+                {services.map((s) => (
+                  <li key={s} className="flex items-start gap-2 text-sm text-dark-foreground/80">
+                    <Sparkles className="mt-0.5 h-3 w-3 shrink-0 text-whatsapp-glow" />
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </RevealOnScroll>
+
+          <RevealOnScroll variant="fade-up" delay={160}>
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+                Contato
+              </div>
+              <ul className="mt-4 space-y-3 text-sm text-dark-foreground/80">
+                <li>
+                  <a href="mailto:evcarvalhodev@gmail.com" className="inline-flex items-center gap-2 transition-colors hover:text-electric-glow">
+                    <Mail className="h-3.5 w-3.5 shrink-0 text-whatsapp-glow" />
+                    evcarvalhodev@gmail.com
                   </a>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Serviços */}
-          <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
-              O que entrego
-            </div>
-            <ul className="mt-4 space-y-2.5">
-              {services.map((s) => (
-                <li key={s} className="flex items-start gap-2 text-sm text-dark-foreground/80">
-                  <Sparkles className="mt-0.5 h-3 w-3 shrink-0 text-whatsapp-glow" />
-                  {s}
+                <li>
+                  <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-whatsapp-glow">
+                    <Phone className="h-3.5 w-3.5 shrink-0 text-whatsapp-glow" />
+                    (12) 99227-5476
+                  </a>
                 </li>
-              ))}
-            </ul>
-          </div>
+                <li className="inline-flex items-center gap-2">
+                  <MapPin className="h-3.5 w-3.5 shrink-0 text-electric-glow" />
+                  Brasil · remoto
+                </li>
+              </ul>
+            </div>
+          </RevealOnScroll>
 
-          {/* Contato */}
-          <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
-              Contato
-            </div>
-            <ul className="mt-4 space-y-3 text-sm text-dark-foreground/80">
-              <li>
-                <a href="mailto:evcarvalhodev@gmail.com" className="inline-flex items-center gap-2 transition-colors hover:text-electric-glow">
-                  <Mail className="h-3.5 w-3.5 shrink-0 text-whatsapp-glow" />
-                  evcarvalhodev@gmail.com
+          <RevealOnScroll variant="fade-up" delay={240}>
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
+                Redes sociais
+              </div>
+              <div className="mt-4 flex items-center gap-2.5">
+                <a
+                  href="https://www.instagram.com/goupcreations/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-electric/50 hover:bg-electric/10 hover:text-electric-glow"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
                 </a>
-              </li>
-              <li>
-                <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-whatsapp-glow">
-                  <Phone className="h-3.5 w-3.5 shrink-0 text-whatsapp-glow" />
-                  (12) 99227-5476
+                <a
+                  href={buildWhatsAppLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-whatsapp/50 hover:bg-whatsapp/10 hover:text-whatsapp-glow"
+                  aria-label="WhatsApp"
+                >
+                  <WhatsAppGlyph className="h-4 w-4" />
                 </a>
-              </li>
-              <li className="inline-flex items-center gap-2">
-                <MapPin className="h-3.5 w-3.5 shrink-0 text-electric-glow" />
-                Brasil · remoto
-              </li>
-            </ul>
-          </div>
-
-          {/* Redes */}
-          <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-dark-muted">
-              Redes sociais
+                <a
+                  href="mailto:evcarvalhodev@gmail.com"
+                  className="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-electric/50 hover:bg-electric/10 hover:text-electric-glow"
+                  aria-label="Email"
+                >
+                  <Mail className="h-4 w-4" />
+                </a>
+              </div>
             </div>
-            <div className="mt-4 flex items-center gap-2.5">
-              <a
-                href="https://www.instagram.com/goupcreations/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-electric/50 hover:bg-electric/10 hover:text-electric-glow"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href={buildWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-whatsapp/50 hover:bg-whatsapp/10 hover:text-whatsapp-glow"
-                aria-label="WhatsApp"
-              >
-                <WhatsAppGlyph className="h-4 w-4" />
-              </a>
-              <a
-                href="mailto:evcarvalhodev@gmail.com"
-                className="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-dark-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-electric/50 hover:bg-electric/10 hover:text-electric-glow"
-                aria-label="Email"
-              >
-                <Mail className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
+          </RevealOnScroll>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 border-t border-white/[0.06] pt-6">
-          <div className="flex flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
-            <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
-              © 2026 Evandro Carvalho
-            </span>
-            <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
-              <a href="#" className="transition-colors hover:text-dark-foreground">Privacidade</a>
-              <span className="h-3 w-px bg-white/10" />
-              <a href="#" className="transition-colors hover:text-dark-foreground">Termos</a>
+        <RevealOnScroll variant="fade-up" delay={300}>
+          <div className="mt-12 border-t border-white/[0.06] pt-6">
+            <div className="flex flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
+                © 2026 Evandro Carvalho
+              </span>
+              <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
+                <a href="#" className="transition-colors hover:text-dark-foreground">Privacidade</a>
+                <span className="h-3 w-px bg-white/10" />
+                <a href="#" className="transition-colors hover:text-dark-foreground">Termos</a>
+              </div>
+              <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
+                <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-whatsapp" />
+                100% online
+              </span>
             </div>
-            <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-dark-muted">
-              <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-whatsapp" />
-              100% online
-            </span>
           </div>
-        </div>
+        </RevealOnScroll>
       </div>
     </footer>
   );
