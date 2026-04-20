@@ -85,10 +85,10 @@ export function Hero() {
         </div>
 
         {/* Headline — line-by-line reveal */}
-        <h1 className="mx-auto mt-8 text-center font-display text-[32px] font-bold leading-[1.1] tracking-[-0.035em] sm:text-[44px] md:text-7xl lg:text-[88px]">
+        <h1 className="mx-auto mt-8 text-center font-display text-[36px] font-extrabold leading-[1.08] tracking-[-0.04em] sm:text-[50px] md:text-[76px] lg:text-[96px]">
           <span className="block whitespace-nowrap">
             <span className="reveal-mask">
-              <span className="reveal-line">Sua oferta merece uma</span>
+              <span className="reveal-line">Sua empresa merece uma</span>
             </span>
           </span>
           <span className="mt-1 block whitespace-nowrap sm:mt-2">
@@ -96,10 +96,10 @@ export function Hero() {
               <span className="reveal-line delay-100">estrutura que vende</span>
             </span>
           </span>
-          <span className="mt-1 block sm:mt-2">
+          <span className="mt-1 block sm:mt-3">
             <span className="reveal-mask">
               <span className="reveal-line delay-200 relative inline-block">
-                <span className="gradient-text-animated">sozinha.</span>
+                <span className="gradient-text-animated text-[40px] font-black sm:text-[56px] md:text-[86px] lg:text-[108px]">no automático.</span>
                 <span className="font-serif absolute -right-3 -top-3 text-3xl italic text-whatsapp-glow md:-right-5 md:-top-6 md:text-5xl">*</span>
               </span>
             </span>
