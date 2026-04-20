@@ -91,7 +91,7 @@ export function Hero() {
               <span className="reveal-line">Sua empresa merece uma</span>
             </span>
           </span>
-          <span className="mt-1 block sm:mt-2">
+          <span className="block sm:mt-1">
             <span className="reveal-mask">
               <span className="reveal-line delay-100">estrutura que vende</span>
             </span>
