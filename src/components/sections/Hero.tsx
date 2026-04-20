@@ -96,7 +96,7 @@ export function Hero() {
               <span className="reveal-line delay-100">estrutura que vende</span>
             </span>
           </span>
-          <span className="mt-2 block sm:mt-4">
+          <span className="block sm:mt-1">
             <span className="reveal-mask">
               <span className="reveal-line delay-200 relative inline-block">
                 <span className="gradient-text-animated text-[34px] font-black drop-shadow-[0_0_40px_hsl(var(--electric)/0.5)] sm:text-[48px] md:text-[76px] lg:text-[98px]">no automático.</span>
